@@ -37,11 +37,13 @@ funciona, pero el navegador bloquea la tipografía.
 Si agregas en el HTML una clase de Tailwind que no se usaba antes, hay que
 regenerar `web/css/estilos.css`. Las instrucciones están en `taller/LEEME-TALLER.txt`.
 
-## Publicación (Cloudflare Pages)
+## Publicación (GitHub Pages)
 
-- Framework preset: **None**
-- Build command: **vacío** (no se compila nada)
-- Build output directory: **`web`**
-- Rama de producción: **`main`**
+La web se publica sola con el workflow `.github/workflows/pages.yml` cada vez que
+se sube un cambio a `main`. Publica la carpeta `web/` tal cual, sin compilar nada.
 
-Cada cambio que se sube a `main` se publica solo.
+- Dirección: https://jhonandersonsix.github.io/jhonweb/
+- Configuración (una sola vez): Settings → Pages → Source: **GitHub Actions**
+- El workflow ajusta las rutas de `404.html` para que funcionen dentro de `/jhonweb/`.
+  Con un dominio propio se ajustan solas.
+- GitHub Pages ignora el archivo `web/_headers`. Solo lo usa Cloudflare Pages.
