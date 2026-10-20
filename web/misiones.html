@@ -58,9 +58,57 @@
   .play{margin-top:auto;padding-top:.6rem;display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.92rem;color:#fff}
   .play i{font-style:normal;transition:transform .25s}
   .mi a:hover .play i{transform:translate(3px,-3px)}
+  /* Hero en dos columnas con mazo de misiones */
+  .hero{display:grid;gap:2.5rem;align-items:center}
+  @media (min-width:900px){.hero{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}}
+  .hero-q{margin-top:1.4rem;font-size:1.35rem;font-weight:800;letter-spacing:-.02em;color:#fff}
+  .hero-p{margin-top:.6rem;max-width:36rem;font-size:1.08rem;line-height:1.7;color:#c8c8cf}
+  .hero-p strong{color:#fff}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+  .rand,.see{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.3rem;border-radius:.9rem;font:inherit;font-weight:700;font-size:1rem;cursor:pointer;color:#fff;text-decoration:none}
+  .rand svg{transition:transform .4s}
+  .rand:hover svg{transform:rotate(180deg)}
+  .see{color:#e4e4e7}
+  .deck{position:relative;display:block;aspect-ratio:16/11;max-width:34rem;width:100%;justify-self:center;text-decoration:none;color:inherit}
+  .deck-card{position:absolute;left:8%;top:6%;width:84%;aspect-ratio:16/10;border-radius:1.1rem;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:#1a1a1f;box-shadow:0 30px 60px -25px rgba(0,0,0,.9);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .deck-card img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:opacity .35s}
+  .deck .c3{transform:rotate(-9deg) translate(-8%,6%);opacity:.55}
+  .deck .c2{transform:rotate(6deg) translate(7%,4%);opacity:.75}
+  .deck .c1{transform:rotate(-1.5deg);box-shadow:0 34px 70px -24px color-mix(in srgb,var(--s4) 60%,transparent),0 0 0 1.5px rgba(255,255,255,.08)}
+  .deck:hover .c1{transform:rotate(0) scale(1.03)}
+  .deck:hover .c3{transform:rotate(-13deg) translate(-12%,8%)}
+  .deck:hover .c2{transform:rotate(10deg) translate(11%,5%)}
+  .deck-play{position:absolute;left:50%;top:42%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;display:grid;place-items:center;color:#0B0B0D;background:#fff;box-shadow:0 0 0 10px rgba(255,255,255,.18),0 12px 30px rgba(0,0,0,.5);animation:pulse 2.2s ease-in-out infinite}
+  .deck-play svg{margin-left:3px}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 8px rgba(255,255,255,.16),0 12px 30px rgba(0,0,0,.5)}50%{box-shadow:0 0 0 18px rgba(255,255,255,.04),0 12px 30px rgba(0,0,0,.5)}}
+  .deck-tag{position:absolute;left:0;right:0;bottom:0;padding:2.2rem 1rem .9rem;display:grid;gap:.15rem;background:linear-gradient(transparent,rgba(11,11,13,.92))}
+  .deck-tag b{font-size:1.15rem;font-weight:800;color:#fff;letter-spacing:-.02em}
+  .deck-tag small{font-size:.78rem;color:#d4d4d8}
+
+  /* Tarjetas: botón de jugar sobre la imagen y botón grande abajo */
+  .hover-play{position:absolute;left:50%;top:45%;z-index:2;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#0B0B0D;box-shadow:0 0 0 10px rgba(255,255,255,.16),0 14px 34px rgba(0,0,0,.55);opacity:0;transform:scale(.6);transition:opacity .3s,transform .35s cubic-bezier(.2,1.4,.4,1)}
+  .hover-play svg{margin-left:3px}
+  .mi a:hover .hover-play,.mi a:focus-visible .hover-play{opacity:1;transform:scale(1)}
+  .shot::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(11,11,13,.35);opacity:0;transition:opacity .3s}
+  .mi a:hover .shot::before{opacity:1}
+  .play.btn-spec{--bb:#16161b;align-self:stretch;justify-content:center;margin-top:auto;padding:.75rem 1rem;border-radius:.8rem;animation-duration:6s}
+  .mi a:hover .play.btn-spec{--bb:#1f1f27}
+  @media (hover:none){.hover-play{opacity:.95;transform:scale(.8)}}
+
+  /* Llamada a WhatsApp */
+  .wa-cta{margin-top:3rem;display:grid;gap:1.4rem;align-items:center;padding:clamp(1.4rem,3vw,2.2rem);border-radius:1.5rem;background:radial-gradient(120% 140% at 0% 0%,rgba(37,211,102,.22),transparent 55%),#0f1712;border:1.5px solid rgba(37,211,102,.45);box-shadow:0 30px 70px -35px rgba(37,211,102,.55)}
+  @media (min-width:760px){.wa-cta{grid-template-columns:1fr auto}}
+  .wa-cta h2{margin:0;font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:800;letter-spacing:-.03em;color:#fff;text-wrap:balance}
+  .wa-cta p{margin:.5rem 0 0;color:#c9d8cf;line-height:1.6;max-width:34rem}
+  .wa-big{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;padding:1.05rem 1.6rem;border-radius:1rem;background:#25D366;color:#062b14;font-weight:800;font-size:1.08rem;text-decoration:none;white-space:nowrap;box-shadow:0 12px 34px -10px rgba(37,211,102,.85),0 0 0 6px rgba(37,211,102,.14);transition:transform .2s,box-shadow .2s,background-color .2s;animation:waGlow 2.6s ease-in-out infinite}
+  .wa-big:hover{background:#2fe072;transform:translateY(-2px);box-shadow:0 18px 40px -10px rgba(37,211,102,.95),0 0 0 8px rgba(37,211,102,.18)}
+  .wa-big span{transition:transform .2s}
+  .wa-big:hover span{transform:translateX(4px)}
+  @keyframes waGlow{0%,100%{box-shadow:0 12px 34px -10px rgba(37,211,102,.85),0 0 0 6px rgba(37,211,102,.14)}50%{box-shadow:0 12px 34px -10px rgba(37,211,102,.85),0 0 0 12px rgba(37,211,102,.06)}}
+  .foot-note{margin-top:1rem;font-size:.85rem;color:#71717a}
   .note{margin-top:2.5rem;padding:1rem 1.2rem;border-radius:1rem;border:1px dashed var(--line);color:#a1a1aa;font-size:.9rem;line-height:1.6}
   .note a{color:#fff;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px}
-  @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.mi a:hover,.mi a:hover .shot img{transform:none}}
+  @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.mi a:hover,.mi a:hover .shot img{transform:none}.hover-play{transform:none}}
 </style>
 <link rel="stylesheet" href="css/estilos.css?v=20261006">
 </head>
@@ -74,10 +122,27 @@
 </header>
 
 <main class="wrap pt-14 sm:pt-20">
-  <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-zinc-400">Docencia</p>
-  <h1 class="mt-4 text-balance text-4xl font-extrabold tracking-[-.035em] sm:text-5xl">Misiones de <span class="t-spec">clase.</span></h1>
-  <p class="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">Juegos y escape rooms que uso en mis clases para practicar lo aprendido. Se juegan en el navegador, solos o en equipo.</p>
-  <div class="stats"><span><b>11</b> misiones</span><span><b>3</b> instituciones</span><span><b>7</b> cursos</span></div>
+  <section class="hero">
+    <div>
+      <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-zinc-400">Docencia</p>
+      <h1 class="mt-4 text-balance text-4xl font-extrabold tracking-[-.035em] sm:text-5xl">Misiones de <span class="t-spec">clase.</span></h1>
+      <p class="hero-q">¿Estás listo para el desafío?</p>
+      <p class="hero-p">Entra a nuestras misiones secretas y escape rooms. Demuestra lo que sabes, supera los acertijos y compite (o colabora) con tus compañeros directamente desde tu navegador. <strong>¡Que comience el juego!</strong></p>
+      <div class="hero-cta">
+        <button type="button" class="btn-spec rand" id="rand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.3" fill="currentColor"/></svg>Jugar una misión al azar</button>
+        <a href="#misiones" class="btn-matte see">Ver todas las misiones <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="stats"><span><b>11</b> misiones</span><span><b>3</b> instituciones</span><span><b>7</b> cursos</span></div>
+    </div>
+    <a class="deck" id="deck" href="https://claude.ai/artifact/3DoFCtZUzg1jbemDwfQisS" target="_blank" rel="noopener" aria-label="Jugar la misión destacada">
+      <span class="deck-card c3" aria-hidden="true"><img src="img/misiones/cyber-kiri.webp" width="800" height="500" alt=""></span>
+      <span class="deck-card c2" aria-hidden="true"><img src="img/misiones/desafio-gondola.webp" width="800" height="500" alt=""></span>
+      <span class="deck-card c1"><img id="deck-img" src="img/misiones/museo-desordenado.webp" width="800" height="500" alt="">
+        <span class="deck-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+        <span class="deck-tag"><b id="deck-t">El Museo Desordenado</b><small id="deck-c">IDAT · Diagramación y Composición</small></span>
+      </span>
+    </a>
+  </section>
 
   <div class="filters" role="group" aria-label="Filtrar misiones por institución">
     <button type="button" aria-pressed="true" data-f="todas">Todas <small>11</small></button>
@@ -104,76 +169,87 @@
     <!-- ===== IDAT · Diagramación y Composición ===== -->
     <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
       <a href="https://claude.ai/artifact/3DoFCtZUzg1jbemDwfQisS" target="_blank" rel="noopener">
-        <div class="shot"><img src="img/misiones/museo-desordenado.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de El Museo Desordenado"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Misión · 5 salas</span></div>
-        <div class="body"><span class="curso">Diagramación y Composición</span><h2>El Museo Desordenado</h2><p>Elementos, peso visual, jerarquía, principios y proporción áurea.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+        <div class="shot"><img src="img/misiones/museo-desordenado.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de El Museo Desordenado"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Misión · 5 salas</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>El Museo Desordenado</h2><p>Elementos, peso visual, jerarquía, principios y proporción áurea.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
     <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
       <a href="https://claude.ai/artifact/W7gcwJgmQiq5nVSkJxMetB" target="_blank" rel="noopener">
-        <div class="shot"><img src="img/misiones/imprenta-express.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Imprenta Express"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Por equipos · 5 órdenes</span></div>
-        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Imprenta Express</h2><p>Principios de diagramación, estilos, tipografía, legibilidad y color.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+        <div class="shot"><img src="img/misiones/imprenta-express.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Imprenta Express"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Por equipos · 5 órdenes</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Imprenta Express</h2><p>Principios de diagramación, estilos, tipografía, legibilidad y color.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
     <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
       <a href="https://claude.ai/artifact/2xDi21QbYRMagL1Qv151N5" target="_blank" rel="noopener">
-        <div class="shot"><img src="img/misiones/rayos-x-grafico.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Rayos X Gráfico"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Laboratorio · 4 niveles</span></div>
-        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Rayos X Gráfico</h2><p>La estructura de una pieza, cómo adaptarla a otro formato y las etapas del boceto.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+        <div class="shot"><img src="img/misiones/rayos-x-grafico.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Rayos X Gráfico"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Laboratorio · 4 niveles</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Rayos X Gráfico</h2><p>La estructura de una pieza, cómo adaptarla a otro formato y las etapas del boceto.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
     <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
       <a href="https://claude.ai/artifact/8CrpPNcYa6skiZsHcdKtFf" target="_blank" rel="noopener">
-        <div class="shot"><img src="img/misiones/mision-brief.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Brief"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Escape room · 4 salas</span></div>
-        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Misión Brief</h2><p>Brief, público e insight, concepto, y rediseño o rediagramación.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+        <div class="shot"><img src="img/misiones/mision-brief.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Brief"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Escape room · 4 salas</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Misión Brief</h2><p>Brief, público e insight, concepto, y rediseño o rediagramación.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
     <!-- ===== IDAT · Diseño web ===== -->
     <li class="mi" data-i="idat" style="--c1:var(--s3);--c2:var(--s4)">
       <a href="https://claude.ai/artifact/TxLg5XUZCbko2FwrgfBAMB" target="_blank" rel="noopener">
-        <div class="shot"><img src="img/misiones/detectives-ux.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Detectives UX"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Escape room · 4 salas</span></div>
-        <div class="body"><span class="curso">Diseño web: interfaces y prototipado</span><h2>Detectives UX</h2><p>Hallazgos, perfil de la persona, recorrido del usuario y pregunta de diseño.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+        <div class="shot"><img src="img/misiones/detectives-ux.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Detectives UX"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Escape room · 4 salas</span></div>
+        <div class="body"><span class="curso">Diseño web: interfaces y prototipado</span><h2>Detectives UX</h2><p>Hallazgos, perfil de la persona, recorrido del usuario y pregunta de diseño.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
     <li class="mi" data-i="idat" style="--c1:var(--s3);--c2:var(--s4)">
       <a href="https://claude.ai/artifact/TzrScauwCcoATpXSUrksyR" target="_blank" rel="noopener">
-        <div class="shot"><img src="img/misiones/ruta-ux.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de La Ruta UX"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Ruta · 6 paradas</span></div>
-        <div class="body"><span class="curso">Diseño web: interfaces y prototipado</span><h2>La Ruta UX</h2><p>Seis paradas con teoría, ejemplo y reto sobre el caso de una app.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+        <div class="shot"><img src="img/misiones/ruta-ux.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de La Ruta UX"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Ruta · 6 paradas</span></div>
+        <div class="body"><span class="curso">Diseño web: interfaces y prototipado</span><h2>La Ruta UX</h2><p>Seis paradas con teoría, ejemplo y reto sobre el caso de una app.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
     <!-- ===== Instituto de Emprendedores (USIL) ===== -->
     <li class="mi" data-i="ie" style="--c1:var(--s5);--c2:var(--s6)">
       <a href="https://claude.ai/artifact/1yf5wrEaA1vA5v41nZC8xa" target="_blank" rel="noopener">
-        <div class="shot"><img src="img/misiones/cyber-kiri.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Cyber Kiri"><span class="inst">Instituto de Emprendedores · USIL</span><span class="fmt">Escape room · 5 salas</span></div>
-        <div class="body"><span class="curso">Marketing Digital</span><h2>Misión Cyber Kiri</h2><p>Tipos de e-commerce, modelos de negocio, embudo, checkout y pagos EDI.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+        <div class="shot"><img src="img/misiones/cyber-kiri.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Cyber Kiri"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Escape room · 5 salas</span></div>
+        <div class="body"><span class="curso">Marketing Digital</span><h2>Misión Cyber Kiri</h2><p>Tipos de e-commerce, modelos de negocio, embudo, checkout y pagos EDI.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
     <li class="mi" data-i="ie" style="--c1:var(--s6);--c2:var(--s7)">
       <a href="https://claude.ai/artifact/8jEvm6zW3iE1eb23wn4Y98" target="_blank" rel="noopener">
-        <div class="shot"><img src="img/misiones/desafio-gondola.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Desafío Góndola"><span class="inst">Instituto de Emprendedores · USIL</span><span class="fmt">Trivia · 6 rondas</span></div>
-        <div class="body"><span class="curso">Trade Marketing</span><h2>Desafío Góndola</h2><p>Shopper, cobertura, share of shelf, promociones y precios psicológicos.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+        <div class="shot"><img src="img/misiones/desafio-gondola.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Desafío Góndola"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Trivia · 6 rondas</span></div>
+        <div class="body"><span class="curso">Trade Marketing</span><h2>Desafío Góndola</h2><p>Shopper, cobertura, share of shelf, promociones y precios psicológicos.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
     <li class="mi" data-i="ie" style="--c1:var(--s7);--c2:var(--s1)">
       <a href="https://claude.ai/artifact/8c9P1JkJRdzbvtEc8abLbR" target="_blank" rel="noopener">
-        <div class="shot"><img src="img/misiones/reto-director-creativo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Reto Director Creativo"><span class="inst">Instituto de Emprendedores · USIL</span><span class="fmt">Trivia · 6 rondas</span></div>
-        <div class="body"><span class="curso">Marketing Directo</span><h2>Reto Director Creativo</h2><p>Lectura visual, funciones de la imagen, impresión y evolución de los medios.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+        <div class="shot"><img src="img/misiones/reto-director-creativo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Reto Director Creativo"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Trivia · 6 rondas</span></div>
+        <div class="body"><span class="curso">Marketing Directo</span><h2>Reto Director Creativo</h2><p>Lectura visual, funciones de la imagen, impresión y evolución de los medios.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
     <li class="mi" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
       <a href="https://claude.ai/artifact/TfPCKizyZbahLmFoq6AZHk" target="_blank" rel="noopener">
-        <div class="shot"><img src="img/misiones/lapiz-rojo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Operación Lápiz Rojo"><span class="inst">Instituto de Emprendedores · USIL</span><span class="fmt">Escape room · 5 candados</span></div>
-        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Operación Lápiz Rojo</h2><p>Revisar una campaña dirigida a niños, niñas y adolescentes antes de que salga al aire.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+        <div class="shot"><img src="img/misiones/lapiz-rojo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Operación Lápiz Rojo"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Escape room · 5 candados</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Operación Lápiz Rojo</h2><p>Revisar una campaña dirigida a niños, niñas y adolescentes antes de que salga al aire.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
     <!-- ===== USIL ===== -->
     <li class="mi" data-i="usil" style="--c1:var(--s2);--c2:var(--s3)">
       <a href="https://claude.ai/artifact/TEsUZmXSU5r4M9TZWbkoPL" target="_blank" rel="noopener">
-        <div class="shot"><img src="img/misiones/helados-chaska.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Helados Chaska"><span class="inst"><img src="img/logos/usil.png" width="181" height="72" alt="">USIL</span><span class="fmt">Misión de agencia · 6 pasos</span></div>
-        <div class="body"><span class="curso">Diseño gráfico y medios digitales</span><h2>Misión Helados Chaska</h2><p>Brief creativo, plan de medios con S/ 3,000 y cronograma de campaña.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+        <div class="shot"><img src="img/misiones/helados-chaska.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Helados Chaska"><span class="inst"><img src="img/logos/usil.png" width="181" height="72" alt="">USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Misión de agencia · 6 pasos</span></div>
+        <div class="body"><span class="curso">Diseño gráfico y medios digitales</span><h2>Misión Helados Chaska</h2><p>Brief creativo, plan de medios con S/ 3,000 y cronograma de campaña.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
   </ul>
 
-  <p class="note">Las misiones se abren en una pestaña nueva, en Claude. ¿Quieres usar alguna con tu grupo o diseñar una para tu equipo? <a href="https://wa.me/51932024404?text=Hola%20Jhon%2C%20vi%20tus%20misiones%20de%20clase%20y%20quiero%20conversar." target="_blank" rel="noopener">Escríbeme por WhatsApp</a>.</p>
+  <section class="wa-cta">
+    <div>
+      <h2>¿Quieres una misión para tu grupo o tu equipo?</h2>
+      <p>Te ayudo a usar estas misiones en tu clase o a diseñar una a la medida de tu curso o tu empresa.</p>
+    </div>
+    <a class="wa-big" href="https://wa.me/51932024404?text=Hola%20Jhon%2C%20vi%20tus%20misiones%20de%20clase%20y%20quiero%20conversar." target="_blank" rel="noopener">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.56.94.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.43-9.43 2.52 0 4.89.98 6.67 2.76a9.37 9.37 0 0 1 2.76 6.68c0 5.2-4.23 9.42-9.44 9.42M20.08 3.9A11.3 11.3 0 0 0 12.05.58C5.78.58.67 5.68.67 11.95c0 2 .52 3.96 1.52 5.69L.58 23.42l5.92-1.55a11.4 11.4 0 0 0 5.44 1.38h.01c6.27 0 11.38-5.1 11.38-11.37 0-3.04-1.18-5.9-3.33-8.05"/></svg>
+      Escríbeme por WhatsApp
+      <span aria-hidden="true">→</span>
+    </a>
+  </section>
+  <p class="foot-note">Las misiones se abren en una pestaña nueva, en Claude.</p>
 </main>
 
 <footer class="mt-20 border-t border-white/5 bg-[#0d0d10]">
@@ -192,6 +268,20 @@
 (function(){
   var cards = [].slice.call(document.querySelectorAll('#misiones .mi'));
   var btns = [].slice.call(document.querySelectorAll('[data-f]'));
+  var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Misión al azar entre las que están visibles con el filtro actual
+  document.getElementById('rand').addEventListener('click', function(){
+    var vis = cards.filter(function(c){ return !c.hidden; });
+    var a = vis[Math.floor(Math.random()*vis.length)].querySelector('a');
+    window.open(a.href, '_blank', 'noopener');
+  });
+  // Mazo del inicio: cambia la misión destacada cada 3,5 s
+  var deck = document.getElementById('deck'), dImg = document.getElementById('deck-img'), dT = document.getElementById('deck-t'), dC = document.getElementById('deck-c'), di = 0;
+  var data = cards.map(function(c){ return { href:c.querySelector('a').href, img:c.querySelector('.shot img').getAttribute('src'), t:c.querySelector('h2').textContent, c:c.querySelector('.inst').textContent.trim() + ' · ' + c.querySelector('.curso').textContent }; });
+  function show(i){ var d = data[i]; dImg.style.opacity = 0; setTimeout(function(){ dImg.src = d.img; dT.textContent = d.t; dC.textContent = d.c; deck.href = d.href; deck.setAttribute('aria-label', 'Jugar ' + d.t); dImg.style.opacity = 1; }, RM ? 0 : 300); }
+  var timer = RM ? null : setInterval(function(){ di = (di+1) % data.length; show(di); }, 3500);
+  deck.addEventListener('mouseenter', function(){ clearInterval(timer); });
+  deck.addEventListener('mouseleave', function(){ if(!RM){ clearInterval(timer); timer = setInterval(function(){ di = (di+1) % data.length; show(di); }, 3500); } });
   btns.forEach(function(b){
     b.addEventListener('click', function(){
       var f = b.getAttribute('data-f');
