@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Misiones de clase | Jhon Pariona</title>
+<meta name="description" content="Juegos y escape rooms que uso en clase para practicar diseño, publicidad, marketing y experiencia de usuario.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jhonpariona.com/misiones">
+<meta name="theme-color" content="#0B0B0D">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/plus-jakarta-sans.woff2) format("woff2")}
+  @property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+  :root{--bg:#0B0B0D;--card:#111114;--line:rgba(255,255,255,.09);--fg:#F4F4F5;--mute:#A1A1AA;
+    --s1:#4FE3C1;--s2:#3FA9F5;--s3:#5B5BF7;--s4:#9B5CF6;--s5:#E8457F;--s6:#FF5A3C;--s7:#FFB23F;
+    --spec-c:conic-gradient(from var(--ang),var(--s1),var(--s2),var(--s3),var(--s4),var(--s5),var(--s6),var(--s7),var(--s1));color-scheme:dark}
+  body{background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
+  :focus-visible{outline:2px solid var(--s1);outline-offset:3px;border-radius:10px}
+  @keyframes ang{to{--ang:360deg}}
+  @keyframes shift{to{background-position:200% 50%}}
+  .t-spec{background:linear-gradient(90deg,var(--s1),var(--s2),var(--s4),var(--s5),var(--s7),var(--s4),var(--s1));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shift 9s linear infinite}
+  .btn-spec{--bb:#111114;border:1.5px solid transparent;color:#fff;background:linear-gradient(var(--bb),var(--bb)) padding-box,var(--spec-c) border-box;animation:ang 5s linear infinite;box-shadow:0 0 28px -8px color-mix(in srgb,var(--s4) 70%,transparent)}
+  .btn-matte{background:linear-gradient(180deg,#1c1c22,#121216);border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+  .btn-matte:hover{border-color:rgba(255,255,255,.24)}
+
+  /* --- Misiones --- */
+  .wrap{max-width:72rem;margin-inline:auto;padding-inline:1rem}
+  @media (min-width:640px){.wrap{padding-inline:1.5rem}}
+  .filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
+  .filters button{font:inherit;font-size:.875rem;font-weight:600;color:#d4d4d8;padding:.55rem 1rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);cursor:pointer;transition:border-color .2s,background-color .2s,color .2s}
+  .filters button:hover{border-color:rgba(255,255,255,.24);color:#fff}
+  .filters button[aria-pressed="true"]{background:#fff;color:#0B0B0D;border-color:#fff}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:1rem;margin-top:1.5rem;list-style:none;padding:0}
+  .mi{position:relative;display:flex;flex-direction:column;gap:.75rem;padding:1.4rem;border-radius:1.25rem;background:var(--card);border:1px solid var(--line);transition:border-color .25s,transform .25s}
+  .mi::before{content:"";position:absolute;inset:0 1.4rem auto;height:3px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,var(--c1),var(--c2))}
+  .mi:hover{border-color:rgba(255,255,255,.2);transform:translateY(-3px)}
+  .mi[hidden]{display:none}
+  .mi .top{display:flex;justify-content:space-between;gap:.75rem;align-items:baseline}
+  .mi .area{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+  .mi .n{font-size:.8rem;font-variant-numeric:tabular-nums;color:#71717a}
+  .mi h2{font-size:1.35rem;font-weight:800;letter-spacing:-.025em;line-height:1.15;color:#fff;margin:0}
+  .mi p{margin:0;color:#b4b4bc;line-height:1.6;font-size:.95rem}
+  .mi .fmt{align-self:flex-start;font-size:.78rem;font-weight:600;color:#e4e4e7;padding:.3rem .7rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+  .mi .go{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1rem;border-radius:.75rem;font-weight:700;font-size:.95rem;text-decoration:none}
+  .note{margin-top:2.5rem;padding:1rem 1.2rem;border-radius:1rem;border:1px dashed var(--line);color:#a1a1aa;font-size:.9rem;line-height:1.6}
+  .note a{color:#fff;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px}
+  @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.mi:hover{transform:none}}
+</style>
+<link rel="stylesheet" href="css/estilos.css?v=20261006">
+</head>
+<body>
+<header class="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 pt-6 sm:px-6">
+  <a href="index.html" class="flex items-center gap-2.5 rounded-xl px-1 py-1 font-bold tracking-tight">
+    <span class="btn-spec grid h-9 w-9 place-items-center rounded-xl text-[13px] font-extrabold" style="animation-duration:7s">JP</span>
+    <span>Jhon Pariona</span>
+  </a>
+  <a href="index.html" class="btn-matte inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-zinc-200"><span aria-hidden="true">←</span> Volver a la web</a>
+</header>
+
+<main class="wrap pt-14 sm:pt-20">
+  <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-zinc-400">Docencia</p>
+  <h1 class="mt-4 text-balance text-4xl font-extrabold tracking-[-.035em] sm:text-5xl">Misiones de <span class="t-spec">clase.</span></h1>
+  <p class="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">Juegos y escape rooms que uso en mis clases para practicar lo aprendido. Se juegan en el navegador, desde el celular o la laptop, solos o en equipo.</p>
+
+  <div class="filters" role="group" aria-label="Filtrar misiones por área">
+    <button type="button" aria-pressed="true" data-f="todas">Todas</button>
+    <button type="button" aria-pressed="false" data-f="diseno">Diseño gráfico</button>
+    <button type="button" aria-pressed="false" data-f="marketing">Publicidad y marketing</button>
+    <button type="button" aria-pressed="false" data-f="ux">Experiencia de usuario</button>
+  </div>
+
+  <!--
+    CÓMO AGREGAR UNA MISIÓN
+    Copia un bloque <li class="mi"> completo y cambia:
+      data-a  → el área para el filtro: diseno, marketing o ux
+      style   → los dos colores de la línea de arriba (--c1 y --c2)
+      .area   → el curso o tema
+      h2      → el nombre
+      p       → de qué trata, en una o dos líneas
+      .fmt    → el formato
+      href    → el enlace del artefacto
+    El número (.n) se pone solo.
+    El artefacto tiene que estar compartido como "cualquiera con el enlace" (botón Compartir de Claude),
+    si no, el visitante verá que no tiene acceso.
+  -->
+  <ul class="grid" id="misiones">
+    <li class="mi" data-a="diseno" style="--c1:var(--s1);--c2:var(--s2)">
+      <div class="top"><span class="area">Composición</span><span class="n"></span></div>
+      <h2>El Museo Desordenado</h2>
+      <p>Alguien desordenó el museo. En 5 salas se devuelve cada obra a su lugar: elementos del diseño, peso visual, jerarquía y recorrido, principios de la composición y proporción áurea.</p>
+      <span class="fmt">Misión por equipos · 5 salas</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/3DoFCtZUzg1jbemDwfQisS" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    </li>
+    <li class="mi" data-a="diseno" style="--c1:var(--s2);--c2:var(--s3)">
+      <div class="top"><span class="area">Diagramación</span><span class="n"></span></div>
+      <h2>Imprenta Express</h2>
+      <p>Cinco pedidos tienen que salir hoy de la imprenta: armar un volante, elegir estilos, ordenar la caja de tipos, probar la legibilidad y mezclar el color.</p>
+      <span class="fmt">Juego por equipos · 5 órdenes</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/W7gcwJgmQiq5nVSkJxMetB" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    </li>
+    <li class="mi" data-a="diseno" style="--c1:var(--s3);--c2:var(--s4)">
+      <div class="top"><span class="area">Diagramación</span><span class="n"></span></div>
+      <h2>Rayos X Gráfico</h2>
+      <p>Toda pieza tiene un esqueleto. En 4 niveles se lee la estructura de un afiche, se reconocen los tipos de estructura, se adapta una pieza a otro formato y se ordenan las etapas del boceto.</p>
+      <span class="fmt">Laboratorio · 4 niveles</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/2xDi21QbYRMagL1Qv151N5" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    </li>
+    <li class="mi" data-a="diseno" style="--c1:var(--s4);--c2:var(--s5)">
+      <div class="top"><span class="area">Brief y concepto</span><span class="n"></span></div>
+      <h2>Misión Brief</h2>
+      <p>El brief de una marca pasó por la trituradora. Hay que reconstruirlo, definir el público y su insight, armar el concepto y decidir entre rediseño y rediagramación.</p>
+      <span class="fmt">Escape room · 4 salas</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/8CrpPNcYa6skiZsHcdKtFf" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    </li>
+    <li class="mi" data-a="marketing" style="--c1:var(--s5);--c2:var(--s6)">
+      <div class="top"><span class="area">Marketing digital · E-commerce</span><span class="n"></span></div>
+      <h2>Misión Cyber Kiri</h2>
+      <p>La tienda online de una marca de café se cayó a dos horas del Cyber. Cada sala resuelta da una letra del código: tipos de e-commerce, modelos de negocio, embudo, checkout y pagos EDI.</p>
+      <span class="fmt">Escape room · 5 salas</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/1yf5wrEaA1vA5v41nZC8xa" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    </li>
+    <li class="mi" data-a="marketing" style="--c1:var(--s6);--c2:var(--s7)">
+      <div class="top"><span class="area">Trade marketing</span><span class="n"></span></div>
+      <h2>Desafío Góndola</h2>
+      <p>Seis rondas para ganar la góndola antes que la competencia: shopper, cobertura, share of shelf, métricas en el punto de venta, promociones y precios psicológicos.</p>
+      <span class="fmt">Trivia · solo o en equipos</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/8jEvm6zW3iE1eb23wn4Y98" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    </li>
+    <li class="mi" data-a="marketing" style="--c1:var(--s7);--c2:var(--s1)">
+      <div class="top"><span class="area">Marketing directo</span><span class="n"></span></div>
+      <h2>Reto Director Creativo</h2>
+      <p>Tu pieza va a imprenta: ¿la apruebas? Lectura visual, funciones de la imagen, soportes, sistemas de impresión, evolución de los medios y sus funciones.</p>
+      <span class="fmt">Trivia · solo o en equipos</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/8c9P1JkJRdzbvtEc8abLbR" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    </li>
+    <li class="mi" data-a="marketing" style="--c1:var(--s1);--c2:var(--s3)">
+      <div class="top"><span class="area">Campaña integral</span><span class="n"></span></div>
+      <h2>Misión Helados Chaska</h2>
+      <p>Una clienta escribe con un encargo y tu equipo es la agencia: arma el brief creativo, reparte S/ 3,000 en un plan de medios y pinta el cronograma de la campaña.</p>
+      <span class="fmt">Misión de agencia · 6 pasos</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/TEsUZmXSU5r4M9TZWbkoPL" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    </li>
+    <li class="mi" data-a="marketing" style="--c1:var(--s5);--c2:var(--s4)">
+      <div class="top"><span class="area">Ética publicitaria</span><span class="n"></span></div>
+      <h2>Operación Lápiz Rojo</h2>
+      <p>Una agencia quiere lanzar una campaña dirigida a niños, niñas y adolescentes. Antes de salir al aire, cada pieza pasa por tu escritorio para revisarla.</p>
+      <span class="fmt">Escape room · 5 candados</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/TfPCKizyZbahLmFoq6AZHk" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    </li>
+    <li class="mi" data-a="ux" style="--c1:var(--s2);--c2:var(--s1)">
+      <div class="top"><span class="area">Experiencia de usuario</span><span class="n"></span></div>
+      <h2>Detectives UX</h2>
+      <p>Un caso por resolver con la investigación de usuarios: agrupar hallazgos, armar el perfil de la persona, trazar su recorrido y formular la pregunta de diseño.</p>
+      <span class="fmt">Escape room · 4 salas</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/TxLg5XUZCbko2FwrgfBAMB" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    </li>
+    <li class="mi" data-a="ux" style="--c1:var(--s3);--c2:var(--s5)">
+      <div class="top"><span class="area">Experiencia de usuario</span><span class="n"></span></div>
+      <h2>La Ruta UX</h2>
+      <p>Una línea de metro con 6 paradas sobre el caso de una app. En cada parada se recuerda la teoría, se ve un ejemplo resuelto y se supera un reto.</p>
+      <span class="fmt">Ruta · 6 paradas</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/TzrScauwCcoATpXSUrksyR" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    </li>
+    <!--
+      PENDIENTE: "Dentro de la mente que compra" está PRIVADO en Claude.
+      Cuando lo compartas como "cualquiera con el enlace", quita estas líneas de comentario y escribe su descripción.
+    <li class="mi" data-a="marketing" style="--c1:var(--s4);--c2:var(--s6)">
+      <div class="top"><span class="area">Comportamiento del consumidor</span><span class="n"></span></div>
+      <h2>Dentro de la mente que compra</h2>
+      <p>[DESCRIPCIÓN PENDIENTE]</p>
+      <span class="fmt">Documento · 7 láminas</span>
+      <a class="go btn-spec" href="https://claude.ai/artifact/YQNBRGNRjc53Qtzes8DV1G" target="_blank" rel="noopener">Ver misión <span aria-hidden="true">↗</span></a>
+    </li>
+    -->
+  </ul>
+
+  <p class="note">Las misiones se abren en una pestaña nueva, en Claude. ¿Quieres usar alguna con tu grupo o diseñar una para tu equipo? <a href="https://wa.me/51932024404?text=Hola%20Jhon%2C%20vi%20tus%20misiones%20de%20clase%20y%20quiero%20conversar." target="_blank" rel="noopener">Escríbeme por WhatsApp</a>.</p>
+</main>
+
+<footer class="mt-20 border-t border-white/5 bg-[#0d0d10]">
+  <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-zinc-400 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+    <p>© 2026 Jhon Pariona · Lima, Perú</p>
+    <nav class="flex flex-wrap gap-x-5 gap-y-2" aria-label="Información legal">
+      <a href="aviso-legal.html" class="hover:text-white">Aviso legal</a>
+      <a href="privacidad.html" class="hover:text-white">Privacidad</a>
+      <a href="cookies.html" class="hover:text-white">Cookies</a>
+      <a href="https://wa.me/51932024404" target="_blank" rel="noopener" class="hover:text-white">WhatsApp</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var cards = [].slice.call(document.querySelectorAll('#misiones .mi'));
+  var btns = [].slice.call(document.querySelectorAll('[data-f]'));
+  function number(){ var k = 0; cards.forEach(function(c){ if(!c.hidden) c.querySelector('.n').textContent = String(++k).padStart(2, '0'); }); }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.getAttribute('data-f');
+      btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      cards.forEach(function(c){ c.hidden = f !== 'todas' && c.getAttribute('data-a') !== f; });
+      number();
+    });
+  });
+  number();
+})();
+</script>
+</body>
+</html>

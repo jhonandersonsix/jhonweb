@@ -208,6 +208,9 @@
     #inicio .hero-art{text-align:center}
     #inicio .stage{aspect-ratio:1/1.15;max-width:520px;margin-top:0}
   }
+  /* Menú de computadora: con "Misiones" son 6 enlaces; entre 1024 y 1279 px se juntan un poco para que nada se parta en dos líneas */
+  #navlinks a,#nav-brand{white-space:nowrap}
+  @media (max-width:1279px){#navlinks a{padding-inline:.6rem}}
   /* Aire entre secciones: antes 96 px por lado en celular y 128 px en computadora */
   main>section.py-24{padding-block:4.5rem}
   @media (min-width:640px){main>section.py-24{padding-block:5.5rem}}
@@ -394,7 +397,7 @@
 <!-- ============ NAVBAR ============ -->
 <header class="fixed inset-x-0 z-50 px-4 sm:px-6" style="top:calc(env(safe-area-inset-top,0px) + 14px)">
   <nav class="mx-auto flex max-w-6xl items-center justify-between gap-3 rounded-2xl border border-white/10 bg-ink-900/75 px-3 py-2.5 backdrop-blur-xl shadow-[0_10px_40px_-15px_rgba(0,0,0,.85)]" aria-label="Principal">
-    <a href="#inicio" class="flex items-center gap-2.5 rounded-xl px-2 py-1 font-bold tracking-tight">
+    <a href="#inicio" id="nav-brand" class="flex items-center gap-2.5 rounded-xl px-2 py-1 font-bold tracking-tight">
       <span class="btn-spec grid h-9 w-9 place-items-center rounded-xl text-[13px] font-extrabold" style="animation-duration:7s">JP</span>
       <span class="hidden sm:inline">Jhon Pariona</span>
     </a>
@@ -405,6 +408,7 @@
       <a href="#docencia" class="relative z-10 rounded-lg px-3.5 py-2 text-sm text-zinc-400 transition-colors hover:text-white" data-nav>Docencia</a>
       <a href="#sobre-mi" class="relative z-10 rounded-lg px-3.5 py-2 text-sm text-zinc-400 transition-colors hover:text-white" data-nav>Sobre mí</a>
       <a href="#faq" class="relative z-10 rounded-lg px-3.5 py-2 text-sm text-zinc-400 transition-colors hover:text-white" data-nav>FAQ</a>
+      <a href="misiones.html" class="relative z-10 rounded-lg px-3.5 py-2 text-sm text-zinc-400 transition-colors hover:text-white">Misiones</a>
     </div>
     <div class="flex items-center gap-2">
       <button type="button" class="btn-matte hidden items-center gap-2 rounded-xl px-3 py-2 text-xs text-zinc-300 md:inline-flex" data-open-pal aria-label="Abrir buscador rápido">
@@ -425,6 +429,7 @@
     <a href="#galeria" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5">Galería</a>
     <a href="#sobre-mi" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5">Sobre mí</a>
     <a href="#faq" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5">FAQ</a>
+    <a href="misiones.html" class="block rounded-xl px-4 py-3 text-zinc-300 hover:bg-white/5">Misiones</a>
     <button type="button" class="block w-full rounded-xl px-4 py-3 text-left text-zinc-300 hover:bg-white/5" data-open-pal>Buscar en la página</button>
     <a href="#contacto" class="btn-spec mt-1 block rounded-xl px-4 py-3 text-center font-semibold">Hablemos</a>
   </div>
@@ -1002,7 +1007,7 @@
         <div><p class="font-bold">Jhon Pariona</p><p class="text-sm text-zinc-500">Consultor de marcas y productos digitales · Lima, Perú</p></div>
       </div>
       <nav class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400" aria-label="Pie de página">
-        <a href="#servicios" class="hover:text-white">Servicios</a><a href="#trayectoria" class="hover:text-white">Trayectoria</a><a href="#docencia" class="hover:text-white">Docencia</a><a href="#galeria" class="hover:text-white">Galería</a><a href="#faq" class="hover:text-white">FAQ</a>
+        <a href="#servicios" class="hover:text-white">Servicios</a><a href="#trayectoria" class="hover:text-white">Trayectoria</a><a href="#docencia" class="hover:text-white">Docencia</a><a href="#galeria" class="hover:text-white">Galería</a><a href="#faq" class="hover:text-white">FAQ</a><a href="misiones.html" class="hover:text-white">Misiones</a>
       </nav>
       <div class="flex flex-wrap items-center gap-2">
         <a href="https://wa.me/51932024404" class="btn-spec inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold" data-wa="Hola Jhon, vi tu web y quiero conversar contigo." aria-label="Escribir a Jhon por WhatsApp">
@@ -1666,6 +1671,7 @@
     { g:'Ir a', t:'Inicio', run:function(){ goTo('#inicio'); } },
     { g:'Ir a', t:'Servicios', run:function(){ goTo('#servicios'); } },
     { g:'Ir a', t:'Escena detrás de cámara', run:function(){ goTo('#escena'); } },
+    { g:'Ir a', t:'Misiones de clase', run:function(){ location.href = 'misiones.html'; } },
     { g:'Ir a', t:'Trayectoria y cifras', run:function(){ goTo('#trayectoria'); } },
     { g:'Ir a', t:'Docencia', run:function(){ goTo('#docencia'); } },
     { g:'Ir a', t:'Galería', run:function(){ goTo('#galeria'); } },
