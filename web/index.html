@@ -843,18 +843,17 @@
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div class="rise flex flex-wrap items-end justify-between gap-4">
         <div class="max-w-2xl">
-          <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-zinc-400">Galería</p>
+          <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-zinc-400">Trabajos</p>
           <h2 class="mt-4 text-balance text-4xl font-extrabold tracking-[-.035em] sm:text-5xl">Detrás de <span class="t-spec">la marca.</span></h2>
         </div>
-        <p class="howto" id="gal-hint"><span class="dot" aria-hidden="true"></span>Pasa el cursor para abrir cada foto. Clic para verla completa.</p>
+        <p class="howto" id="gal-hint"><span class="dot" aria-hidden="true"></span>Pasa el cursor para abrir cada trabajo. Clic para verlo completo.</p>
       </div>
       <div class="acc rise mt-8" id="acc">
-        <button type="button" aria-label="01 Retrato. Ampliar foto: Jhon Pariona de tres cuartos, en blanco y negro, con saco y lentes" class="acc-it on" data-shot="tres-cuartos-bn" style="--oy:18%"><img src="img/tres-cuartos-bn.webp" width="557" height="1300" loading="lazy" alt="Jhon Pariona de tres cuartos, en blanco y negro, con saco y lentes"><span class="acc-cap"><b>01</b><span>Retrato</span></span></button>
-        <button type="button" aria-label="02 Ascensor. Ampliar foto: Jhon Pariona con abrigo largo y un café en un ascensor" class="acc-it" data-shot="abrigo" style="--oy:24%"><img src="img/abrigo.webp" width="621" height="1300" loading="lazy" alt="Jhon Pariona con abrigo largo y un café en un ascensor"><span class="acc-cap"><b>02</b><span>Ascensor</span></span></button>
-        <button type="button" aria-label="03 Viñeta. Ampliar foto: Jhon Pariona frente a viñetas de cómic en blanco y negro" class="acc-it" data-shot="vineta" style="--oy:20%"><img src="img/vineta.webp" width="621" height="1300" loading="lazy" alt="Jhon Pariona frente a viñetas de cómic en blanco y negro"><span class="acc-cap"><b>03</b><span>Viñeta</span></span></button>
-        <button type="button" aria-label="04 Rosas. Ampliar foto: Jhon Pariona con traje negro frente a un muro de rosas oscuras" class="acc-it" data-shot="rosas" style="--oy:40%"><img src="img/rosas.webp" width="621" height="1300" loading="lazy" alt="Jhon Pariona con traje negro frente a un muro de rosas oscuras"><span class="acc-cap"><b>04</b><span>Rosas</span></span></button>
-        <button type="button" aria-label="05 Blanco y negro. Ampliar foto: Retrato en blanco y negro de Jhon Pariona con lentes de aviador" class="acc-it" data-shot="rayban-bn" style="--oy:30%"><img src="img/rayban-bn.webp" width="928" height="1024" loading="lazy" alt="Retrato en blanco y negro de Jhon Pariona con lentes de aviador"><span class="acc-cap"><b>05</b><span>Blanco y negro</span></span></button>
-        <button type="button" aria-label="06 Cuerpo entero. Ampliar foto: Jhon Pariona en blanco y negro dentro de un ascensor" class="acc-it" data-shot="ascensor-bn" style="--oy:20%"><img src="img/ascensor-bn.webp" width="509" height="1300" loading="lazy" alt="Jhon Pariona en blanco y negro dentro de un ascensor"><span class="acc-cap"><b>06</b><span>Cuerpo entero</span></span></button>
+        <button type="button" class="acc-it on" data-shot="karstico" data-set="trabajos" style="--oy:50%"><img src="img/trabajos/karstico.webp" width="1400" height="1020" loading="lazy" alt="Papelería de Kárstico Arquitectos: tubo de planos, hoja membretada, tarjeta, cuaderno y clips en verde y kraft"><span class="acc-cap"><b>01</b><span>Kárstico Arquitectos</span></span></button>
+        <button type="button" class="acc-it" data-shot="infimed-campana" data-set="trabajos" style="--oy:40%"><img src="img/trabajos/infimed-campana.webp" width="1400" height="960" loading="lazy" alt="Fotografía de campaña de Infimed: cuatro mujeres sonriendo frente a un fondo rosado con el logotipo encima"><span class="acc-cap"><b>02</b><span>Infimed</span></span></button>
+        <button type="button" class="acc-it" data-shot="infimed-editorial" data-set="trabajos" style="--oy:50%"><img src="img/trabajos/infimed-editorial.webp" width="1400" height="932" loading="lazy" alt="Revistas abiertas de Infimed sobre fondo rosado, con fotografías y el logotipo en las páginas"><span class="acc-cap"><b>03</b><span>Infimed · Editorial</span></span></button>
+        <button type="button" class="acc-it" data-shot="modenta-identidad" data-set="trabajos" style="--oy:40%"><img src="img/trabajos/modenta-identidad.webp" width="1400" height="959" loading="lazy" alt="Identidad de Modenta: carpeta, libreta, portada con una mujer sonriendo, celular y cubeta dental en verde menta"><span class="acc-cap"><b>04</b><span>Modenta</span></span></button>
+        <button type="button" class="acc-it" data-shot="modenta-papeleria" data-set="trabajos" style="--oy:50%"><img src="img/trabajos/modenta-papeleria.webp" width="800" height="800" loading="lazy" alt="Sobre, carpeta y libreta de Modenta en verde menta con el logotipo"><span class="acc-cap"><b>05</b><span>Modenta · Papelería</span></span></button>
       </div>
     </div>
   </section>
@@ -1243,14 +1242,18 @@
     { k:'rayban-bn', a:'Retrato en blanco y negro de Jhon Pariona con lentes de aviador' },
     { k:'ascensor-bn', a:'Jhon Pariona en blanco y negro dentro de un ascensor' }
   ];
+  // Los trabajos de la galería se recorren aparte de las fotos del inicio
+  var WORKS = $$('#acc .acc-it').map(function(a){ return { k:a.getAttribute('data-shot'), a:$('img', a).alt, src:$('img', a).getAttribute('src') }; });
+  var SETS = { fotos:SHOTS, trabajos:WORKS }, CUR = SHOTS;
   var lb = $('#lb'), lbImg = $('#lb-img'), lbCount = $('#lb-count'), lbi = 0, lbLast = null;
   function showShot(i){
-    lbi = (i + SHOTS.length) % SHOTS.length;
-    lbImg.src = 'img/' + SHOTS[lbi].k + '.webp'; lbImg.alt = SHOTS[lbi].a;
-    lbCount.textContent = ('0'+(lbi+1)).slice(-2) + ' / ' + ('0'+SHOTS.length).slice(-2);
+    lbi = (i + CUR.length) % CUR.length;
+    lbImg.src = CUR[lbi].src || ('img/' + CUR[lbi].k + '.webp'); lbImg.alt = CUR[lbi].a;
+    lbCount.textContent = ('0'+(lbi+1)).slice(-2) + ' / ' + ('0'+CUR.length).slice(-2);
   }
-  function openLb(k){
-    var i = 0; SHOTS.forEach(function(s,j){ if(s.k === k) i = j; });
+  function openLb(k, set){
+    CUR = SETS[set] || SHOTS;
+    var i = 0; CUR.forEach(function(s,j){ if(s.k === k) i = j; });
     lbLast = document.activeElement; showShot(i); lb.hidden = false;
     requestAnimationFrame(function(){ lb.classList.add('open'); });
     if(lenis) lenis.stop();
@@ -1548,12 +1551,12 @@
   /* ---------- Galería acordeón ---------- */
   var accs = $$('.acc-it');
   accs.forEach(function(a){
-    a.setAttribute('aria-label', 'Ampliar foto: ' + $('img', a).alt);
+    a.setAttribute('aria-label', 'Ampliar trabajo: ' + $('img', a).alt);
     a.addEventListener('pointerenter', function(){ if(FINE) accs.forEach(function(x){ x.classList.toggle('on', x===a); }); });
     a.addEventListener('focus', function(){ accs.forEach(function(x){ x.classList.toggle('on', x===a); }); });
-    a.addEventListener('click', function(){ openLb(a.getAttribute('data-shot')); });
+    a.addEventListener('click', function(){ openLb(a.getAttribute('data-shot'), a.getAttribute('data-set')); });
   });
-  if(!FINE){ $('#gal-hint').innerHTML = '<span class="dot" aria-hidden="true"></span>Desliza de lado. Toca una foto para verla completa.'; }
+  if(!FINE){ $('#gal-hint').innerHTML = '<span class="dot" aria-hidden="true"></span>Desliza de lado. Toca un trabajo para verlo completo.'; }
 
   /* ---------- Sobre mí ---------- */
   var ap = $('#about-photo');
