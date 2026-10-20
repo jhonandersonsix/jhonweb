@@ -1,0 +1,54 @@
+===========================================================
+  TALLER
+  Para regenerar los estilos de Tailwind
+===========================================================
+
+Esta carpeta NO se sube al hosting. Es solo para quien edite
+el código.
+
+
+QUÉ PASÓ
+
+  Antes, la web cargaba Tailwind desde internet y el
+  navegador armaba los estilos en cada visita. Eso es lento
+  y el propio Tailwind dice que no se use en una web
+  publicada.
+
+  Ahora los estilos ya vienen armados en el archivo
+  web/css/estilos.css (20 KB). Se ve exactamente igual.
+
+
+CUÁNDO HAY QUE REGENERARLO
+
+  Solo si se agrega en el HTML una clase de Tailwind que
+  no se usaba antes (por ejemplo "text-red-500" o "mt-12").
+
+  Cambiar textos, fotos, enlaces, el número de WhatsApp o
+  los colores --s1 a --s7 NO requiere regenerar nada.
+
+  Si agregas una clase nueva y no hace efecto, es por esto.
+
+
+CÓMO SE REGENERA
+
+  Necesita Node.js instalado. Desde esta carpeta:
+
+    npx tailwindcss@3 -c tailwind.config.js -i entrada.css -o ../web/css/estilos.css --minify
+
+  Después, en web/index.html y en las demás páginas, cambia
+  el número de versión del enlace al CSS para que los
+  navegadores no usen la copia vieja:
+
+    css/estilos.css?v=20261006   →   css/estilos.css?v=(fecha nueva)
+
+  O pídeselo al asistente con el que trabajes: con este
+  archivo y tailwind.config.js tiene todo lo que necesita.
+
+
+QUÉ HAY AQUÍ
+
+  tailwind.config.js   La configuración (la misma que antes
+                       estaba dentro de index.html), más el
+                       gris de textos pequeños aclarado para
+                       cumplir el contraste.
+  entrada.css          Las tres líneas que Tailwind necesita.

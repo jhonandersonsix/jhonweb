@@ -1,0 +1,5 @@
+# Permite que Google y los demás buscadores lean toda la web
+User-agent: *
+Allow: /
+
+Sitemap: https://jhonpariona.com/sitemap.xml
