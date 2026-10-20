@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Misiones de clase | Jhon Pariona</title>
-<meta name="description" content="Juegos y escape rooms que uso en clase para practicar diseño, publicidad, marketing y experiencia de usuario.">
+<meta name="description" content="Juegos y escape rooms que uso en clase en IDAT, USIL y el Instituto de Emprendedores para practicar diseño, publicidad, marketing y experiencia de usuario.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://jhonpariona.com/misiones">
 <meta name="theme-color" content="#0B0B0D">
@@ -31,25 +31,36 @@
   /* --- Misiones --- */
   .wrap{max-width:72rem;margin-inline:auto;padding-inline:1rem}
   @media (min-width:640px){.wrap{padding-inline:1.5rem}}
+  .stats{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+  .stats span{display:inline-flex;align-items:baseline;gap:.4rem;padding:.5rem .9rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:.875rem;color:#d4d4d8}
+  .stats b{font-size:1.15rem;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}
   .filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
-  .filters button{font:inherit;font-size:.875rem;font-weight:600;color:#d4d4d8;padding:.55rem 1rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);cursor:pointer;transition:border-color .2s,background-color .2s,color .2s}
+  .filters button{display:inline-flex;align-items:center;gap:.5rem;font:inherit;font-size:.875rem;font-weight:600;color:#d4d4d8;padding:.55rem 1rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);cursor:pointer;transition:border-color .2s,background-color .2s,color .2s}
   .filters button:hover{border-color:rgba(255,255,255,.24);color:#fff}
+  .filters button small{font-size:.75rem;opacity:.7;font-variant-numeric:tabular-nums}
   .filters button[aria-pressed="true"]{background:#fff;color:#0B0B0D;border-color:#fff}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:1rem;margin-top:1.5rem;list-style:none;padding:0}
-  .mi{position:relative;display:flex;flex-direction:column;gap:.75rem;padding:1.4rem;border-radius:1.25rem;background:var(--card);border:1px solid var(--line);transition:border-color .25s,transform .25s}
-  .mi::before{content:"";position:absolute;inset:0 1.4rem auto;height:3px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,var(--c1),var(--c2))}
-  .mi:hover{border-color:rgba(255,255,255,.2);transform:translateY(-3px)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,20rem),1fr));gap:1.1rem;margin-top:1.5rem;list-style:none;padding:0}
   .mi[hidden]{display:none}
-  .mi .top{display:flex;justify-content:space-between;gap:.75rem;align-items:baseline}
-  .mi .area{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
-  .mi .n{font-size:.8rem;font-variant-numeric:tabular-nums;color:#71717a}
-  .mi h2{font-size:1.35rem;font-weight:800;letter-spacing:-.025em;line-height:1.15;color:#fff;margin:0}
-  .mi p{margin:0;color:#b4b4bc;line-height:1.6;font-size:.95rem}
-  .mi .fmt{align-self:flex-start;font-size:.78rem;font-weight:600;color:#e4e4e7;padding:.3rem .7rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
-  .mi .go{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.75rem 1rem;border-radius:.75rem;font-weight:700;font-size:.95rem;text-decoration:none}
+  .mi a{display:flex;flex-direction:column;height:100%;border-radius:1.25rem;background:var(--card);border:1px solid var(--line);overflow:hidden;color:inherit;text-decoration:none;transition:border-color .25s,transform .25s,box-shadow .25s}
+  .mi a:hover{border-color:rgba(255,255,255,.22);transform:translateY(-4px);box-shadow:0 24px 50px -24px color-mix(in srgb,var(--s4) 55%,transparent)}
+  .shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:#1a1a1f;border-bottom:1px solid var(--line)}
+  .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .mi a:hover .shot img{transform:scale(1.04)}
+  .shot::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,rgba(11,11,13,.85));pointer-events:none}
+  .inst{position:absolute;left:.75rem;bottom:.75rem;z-index:1;display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .7rem;border-radius:999px;background:rgba(11,11,13,.82);border:1px solid rgba(255,255,255,.18);font-size:.78rem;font-weight:700;color:#fff;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .inst img{height:16px;width:auto;display:block}
+  .fmt{position:absolute;right:.75rem;top:.75rem;z-index:1;padding:.3rem .65rem;border-radius:999px;background:rgba(11,11,13,.82);border:1px solid rgba(255,255,255,.18);font-size:.72rem;font-weight:600;color:#e4e4e7}
+  .body{display:flex;flex-direction:column;gap:.55rem;padding:1.1rem 1.2rem 1.25rem;flex:1}
+  .curso{align-self:flex-start;display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:700;color:#0B0B0D;padding:.3rem .7rem;border-radius:.5rem;background:linear-gradient(90deg,var(--c1),var(--c2))}
+  .body h2{font-size:1.3rem;font-weight:800;letter-spacing:-.025em;line-height:1.15;color:#fff;margin:.1rem 0 0}
+  .body p{margin:0;color:#a1a1aa;line-height:1.5;font-size:.9rem}
+  .play{margin-top:auto;padding-top:.6rem;display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.92rem;color:#fff}
+  .play i{font-style:normal;transition:transform .25s}
+  .mi a:hover .play i{transform:translate(3px,-3px)}
   .note{margin-top:2.5rem;padding:1rem 1.2rem;border-radius:1rem;border:1px dashed var(--line);color:#a1a1aa;font-size:.9rem;line-height:1.6}
   .note a{color:#fff;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px}
-  @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.mi:hover{transform:none}}
+  @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.mi a:hover,.mi a:hover .shot img{transform:none}}
 </style>
 <link rel="stylesheet" href="css/estilos.css?v=20261006">
 </head>
@@ -65,106 +76,100 @@
 <main class="wrap pt-14 sm:pt-20">
   <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-zinc-400">Docencia</p>
   <h1 class="mt-4 text-balance text-4xl font-extrabold tracking-[-.035em] sm:text-5xl">Misiones de <span class="t-spec">clase.</span></h1>
-  <p class="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">Juegos y escape rooms que uso en mis clases para practicar lo aprendido. Se juegan en el navegador, desde el celular o la laptop, solos o en equipo.</p>
+  <p class="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">Juegos y escape rooms que uso en mis clases para practicar lo aprendido. Se juegan en el navegador, solos o en equipo.</p>
+  <div class="stats"><span><b>11</b> misiones</span><span><b>3</b> instituciones</span><span><b>7</b> cursos</span></div>
 
-  <div class="filters" role="group" aria-label="Filtrar misiones por área">
-    <button type="button" aria-pressed="true" data-f="todas">Todas</button>
-    <button type="button" aria-pressed="false" data-f="diseno">Diseño gráfico</button>
-    <button type="button" aria-pressed="false" data-f="marketing">Publicidad y marketing</button>
-    <button type="button" aria-pressed="false" data-f="ux">Experiencia de usuario</button>
+  <div class="filters" role="group" aria-label="Filtrar misiones por institución">
+    <button type="button" aria-pressed="true" data-f="todas">Todas <small>11</small></button>
+    <button type="button" aria-pressed="false" data-f="idat">IDAT <small>6</small></button>
+    <button type="button" aria-pressed="false" data-f="ie">Instituto de Emprendedores <small>4</small></button>
+    <button type="button" aria-pressed="false" data-f="usil">USIL <small>1</small></button>
   </div>
 
   <!--
     CÓMO AGREGAR UNA MISIÓN
     Copia un bloque <li class="mi"> completo y cambia:
-      data-a  → el área para el filtro: diseno, marketing o ux
-      style   → los dos colores de la línea de arriba (--c1 y --c2)
-      .area   → el curso o tema
-      h2      → el nombre
-      p       → de qué trata, en una o dos líneas
-      .fmt    → el formato
-      href    → el enlace del artefacto
-    El número (.n) se pone solo.
-    El artefacto tiene que estar compartido como "cualquiera con el enlace" (botón Compartir de Claude),
-    si no, el visitante verá que no tiene acceso.
+      data-i   → la institución para el filtro: idat, ie o usil (si agregas otra, agrega también su botón arriba)
+      style    → los dos colores de la etiqueta del curso (--c1 y --c2)
+      href     → el enlace del artefacto
+      img src  → la captura del juego, en img/misiones/ (800 × 500 px, .webp)
+      .inst    → la institución
+      .fmt     → el formato
+      .curso   → el curso
+      h2 y p   → el nombre y una línea de qué trata
+    Actualiza también los números de arriba (misiones, instituciones, cursos y los de cada filtro).
+    El artefacto tiene que estar compartido como "cualquiera con el enlace", si no, el visitante verá que no tiene acceso.
   -->
   <ul class="grid" id="misiones">
-    <li class="mi" data-a="diseno" style="--c1:var(--s1);--c2:var(--s2)">
-      <div class="top"><span class="area">Composición</span><span class="n"></span></div>
-      <h2>El Museo Desordenado</h2>
-      <p>Alguien desordenó el museo. En 5 salas se devuelve cada obra a su lugar: elementos del diseño, peso visual, jerarquía y recorrido, principios de la composición y proporción áurea.</p>
-      <span class="fmt">Misión por equipos · 5 salas</span>
-      <a class="go btn-spec" href="https://claude.ai/artifact/3DoFCtZUzg1jbemDwfQisS" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    <!-- ===== IDAT · Diagramación y Composición ===== -->
+    <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/3DoFCtZUzg1jbemDwfQisS" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/museo-desordenado.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de El Museo Desordenado"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Misión · 5 salas</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>El Museo Desordenado</h2><p>Elementos, peso visual, jerarquía, principios y proporción áurea.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
     </li>
-    <li class="mi" data-a="diseno" style="--c1:var(--s2);--c2:var(--s3)">
-      <div class="top"><span class="area">Diagramación</span><span class="n"></span></div>
-      <h2>Imprenta Express</h2>
-      <p>Cinco pedidos tienen que salir hoy de la imprenta: armar un volante, elegir estilos, ordenar la caja de tipos, probar la legibilidad y mezclar el color.</p>
-      <span class="fmt">Juego por equipos · 5 órdenes</span>
-      <a class="go btn-spec" href="https://claude.ai/artifact/W7gcwJgmQiq5nVSkJxMetB" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/W7gcwJgmQiq5nVSkJxMetB" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/imprenta-express.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Imprenta Express"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Por equipos · 5 órdenes</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Imprenta Express</h2><p>Principios de diagramación, estilos, tipografía, legibilidad y color.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
     </li>
-    <li class="mi" data-a="diseno" style="--c1:var(--s3);--c2:var(--s4)">
-      <div class="top"><span class="area">Diagramación</span><span class="n"></span></div>
-      <h2>Rayos X Gráfico</h2>
-      <p>Toda pieza tiene un esqueleto. En 4 niveles se lee la estructura de un afiche, se reconocen los tipos de estructura, se adapta una pieza a otro formato y se ordenan las etapas del boceto.</p>
-      <span class="fmt">Laboratorio · 4 niveles</span>
-      <a class="go btn-spec" href="https://claude.ai/artifact/2xDi21QbYRMagL1Qv151N5" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/2xDi21QbYRMagL1Qv151N5" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/rayos-x-grafico.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Rayos X Gráfico"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Laboratorio · 4 niveles</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Rayos X Gráfico</h2><p>La estructura de una pieza, cómo adaptarla a otro formato y las etapas del boceto.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
     </li>
-    <li class="mi" data-a="diseno" style="--c1:var(--s4);--c2:var(--s5)">
-      <div class="top"><span class="area">Brief y concepto</span><span class="n"></span></div>
-      <h2>Misión Brief</h2>
-      <p>El brief de una marca pasó por la trituradora. Hay que reconstruirlo, definir el público y su insight, armar el concepto y decidir entre rediseño y rediagramación.</p>
-      <span class="fmt">Escape room · 4 salas</span>
-      <a class="go btn-spec" href="https://claude.ai/artifact/8CrpPNcYa6skiZsHcdKtFf" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/8CrpPNcYa6skiZsHcdKtFf" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/mision-brief.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Brief"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Escape room · 4 salas</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Misión Brief</h2><p>Brief, público e insight, concepto, y rediseño o rediagramación.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
     </li>
-    <li class="mi" data-a="marketing" style="--c1:var(--s5);--c2:var(--s6)">
-      <div class="top"><span class="area">Marketing digital · E-commerce</span><span class="n"></span></div>
-      <h2>Misión Cyber Kiri</h2>
-      <p>La tienda online de una marca de café se cayó a dos horas del Cyber. Cada sala resuelta da una letra del código: tipos de e-commerce, modelos de negocio, embudo, checkout y pagos EDI.</p>
-      <span class="fmt">Escape room · 5 salas</span>
-      <a class="go btn-spec" href="https://claude.ai/artifact/1yf5wrEaA1vA5v41nZC8xa" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    <!-- ===== IDAT · Diseño web ===== -->
+    <li class="mi" data-i="idat" style="--c1:var(--s3);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/TxLg5XUZCbko2FwrgfBAMB" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/detectives-ux.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Detectives UX"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Escape room · 4 salas</span></div>
+        <div class="body"><span class="curso">Diseño web: interfaces y prototipado</span><h2>Detectives UX</h2><p>Hallazgos, perfil de la persona, recorrido del usuario y pregunta de diseño.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
     </li>
-    <li class="mi" data-a="marketing" style="--c1:var(--s6);--c2:var(--s7)">
-      <div class="top"><span class="area">Trade marketing</span><span class="n"></span></div>
-      <h2>Desafío Góndola</h2>
-      <p>Seis rondas para ganar la góndola antes que la competencia: shopper, cobertura, share of shelf, métricas en el punto de venta, promociones y precios psicológicos.</p>
-      <span class="fmt">Trivia · solo o en equipos</span>
-      <a class="go btn-spec" href="https://claude.ai/artifact/8jEvm6zW3iE1eb23wn4Y98" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    <li class="mi" data-i="idat" style="--c1:var(--s3);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/TzrScauwCcoATpXSUrksyR" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/ruta-ux.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de La Ruta UX"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="fmt">Ruta · 6 paradas</span></div>
+        <div class="body"><span class="curso">Diseño web: interfaces y prototipado</span><h2>La Ruta UX</h2><p>Seis paradas con teoría, ejemplo y reto sobre el caso de una app.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
     </li>
-    <li class="mi" data-a="marketing" style="--c1:var(--s7);--c2:var(--s1)">
-      <div class="top"><span class="area">Marketing directo</span><span class="n"></span></div>
-      <h2>Reto Director Creativo</h2>
-      <p>Tu pieza va a imprenta: ¿la apruebas? Lectura visual, funciones de la imagen, soportes, sistemas de impresión, evolución de los medios y sus funciones.</p>
-      <span class="fmt">Trivia · solo o en equipos</span>
-      <a class="go btn-spec" href="https://claude.ai/artifact/8c9P1JkJRdzbvtEc8abLbR" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    <!-- ===== Instituto de Emprendedores (USIL) ===== -->
+    <li class="mi" data-i="ie" style="--c1:var(--s5);--c2:var(--s6)">
+      <a href="https://claude.ai/artifact/1yf5wrEaA1vA5v41nZC8xa" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/cyber-kiri.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Cyber Kiri"><span class="inst">Instituto de Emprendedores · USIL</span><span class="fmt">Escape room · 5 salas</span></div>
+        <div class="body"><span class="curso">Marketing Digital</span><h2>Misión Cyber Kiri</h2><p>Tipos de e-commerce, modelos de negocio, embudo, checkout y pagos EDI.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
     </li>
-    <li class="mi" data-a="marketing" style="--c1:var(--s1);--c2:var(--s3)">
-      <div class="top"><span class="area">Campaña integral</span><span class="n"></span></div>
-      <h2>Misión Helados Chaska</h2>
-      <p>Una clienta escribe con un encargo y tu equipo es la agencia: arma el brief creativo, reparte S/ 3,000 en un plan de medios y pinta el cronograma de la campaña.</p>
-      <span class="fmt">Misión de agencia · 6 pasos</span>
-      <a class="go btn-spec" href="https://claude.ai/artifact/TEsUZmXSU5r4M9TZWbkoPL" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    <li class="mi" data-i="ie" style="--c1:var(--s6);--c2:var(--s7)">
+      <a href="https://claude.ai/artifact/8jEvm6zW3iE1eb23wn4Y98" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/desafio-gondola.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Desafío Góndola"><span class="inst">Instituto de Emprendedores · USIL</span><span class="fmt">Trivia · 6 rondas</span></div>
+        <div class="body"><span class="curso">Trade Marketing</span><h2>Desafío Góndola</h2><p>Shopper, cobertura, share of shelf, promociones y precios psicológicos.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
     </li>
-    <li class="mi" data-a="marketing" style="--c1:var(--s5);--c2:var(--s4)">
-      <div class="top"><span class="area">Ética publicitaria</span><span class="n"></span></div>
-      <h2>Operación Lápiz Rojo</h2>
-      <p>Una agencia quiere lanzar una campaña dirigida a niños, niñas y adolescentes. Antes de salir al aire, cada pieza pasa por tu escritorio para revisarla.</p>
-      <span class="fmt">Escape room · 5 candados</span>
-      <a class="go btn-spec" href="https://claude.ai/artifact/TfPCKizyZbahLmFoq6AZHk" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    <li class="mi" data-i="ie" style="--c1:var(--s7);--c2:var(--s1)">
+      <a href="https://claude.ai/artifact/8c9P1JkJRdzbvtEc8abLbR" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/reto-director-creativo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Reto Director Creativo"><span class="inst">Instituto de Emprendedores · USIL</span><span class="fmt">Trivia · 6 rondas</span></div>
+        <div class="body"><span class="curso">Marketing Directo</span><h2>Reto Director Creativo</h2><p>Lectura visual, funciones de la imagen, impresión y evolución de los medios.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
     </li>
-    <li class="mi" data-a="ux" style="--c1:var(--s2);--c2:var(--s1)">
-      <div class="top"><span class="area">Experiencia de usuario</span><span class="n"></span></div>
-      <h2>Detectives UX</h2>
-      <p>Un caso por resolver con la investigación de usuarios: agrupar hallazgos, armar el perfil de la persona, trazar su recorrido y formular la pregunta de diseño.</p>
-      <span class="fmt">Escape room · 4 salas</span>
-      <a class="go btn-spec" href="https://claude.ai/artifact/TxLg5XUZCbko2FwrgfBAMB" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    <li class="mi" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/TfPCKizyZbahLmFoq6AZHk" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/lapiz-rojo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Operación Lápiz Rojo"><span class="inst">Instituto de Emprendedores · USIL</span><span class="fmt">Escape room · 5 candados</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Operación Lápiz Rojo</h2><p>Revisar una campaña dirigida a niños, niñas y adolescentes antes de que salga al aire.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
     </li>
-    <li class="mi" data-a="ux" style="--c1:var(--s3);--c2:var(--s5)">
-      <div class="top"><span class="area">Experiencia de usuario</span><span class="n"></span></div>
-      <h2>La Ruta UX</h2>
-      <p>Una línea de metro con 6 paradas sobre el caso de una app. En cada parada se recuerda la teoría, se ve un ejemplo resuelto y se supera un reto.</p>
-      <span class="fmt">Ruta · 6 paradas</span>
-      <a class="go btn-spec" href="https://claude.ai/artifact/TzrScauwCcoATpXSUrksyR" target="_blank" rel="noopener">Jugar misión <span aria-hidden="true">↗</span></a>
+    <!-- ===== USIL ===== -->
+    <li class="mi" data-i="usil" style="--c1:var(--s2);--c2:var(--s3)">
+      <a href="https://claude.ai/artifact/TEsUZmXSU5r4M9TZWbkoPL" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/helados-chaska.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Helados Chaska"><span class="inst"><img src="img/logos/usil.png" width="181" height="72" alt="">USIL</span><span class="fmt">Misión de agencia · 6 pasos</span></div>
+        <div class="body"><span class="curso">Diseño gráfico y medios digitales</span><h2>Misión Helados Chaska</h2><p>Brief creativo, plan de medios con S/ 3,000 y cronograma de campaña.</p><span class="play">Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
     </li>
   </ul>
 
@@ -187,16 +192,13 @@
 (function(){
   var cards = [].slice.call(document.querySelectorAll('#misiones .mi'));
   var btns = [].slice.call(document.querySelectorAll('[data-f]'));
-  function number(){ var k = 0; cards.forEach(function(c){ if(!c.hidden) c.querySelector('.n').textContent = String(++k).padStart(2, '0'); }); }
   btns.forEach(function(b){
     b.addEventListener('click', function(){
       var f = b.getAttribute('data-f');
       btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      cards.forEach(function(c){ c.hidden = f !== 'todas' && c.getAttribute('data-a') !== f; });
-      number();
+      cards.forEach(function(c){ c.hidden = f !== 'todas' && c.getAttribute('data-i') !== f; });
     });
   });
-  number();
 })();
 </script>
 </body>
