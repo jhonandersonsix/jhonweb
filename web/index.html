@@ -315,6 +315,14 @@
   /* Botón único de cada servicio: ancho completo, con ícono y brillo */
   .cta-big{width:100%;justify-content:center;padding:15px 20px;font-size:1rem;font-weight:750;border-radius:14px;box-shadow:0 0 30px -10px color-mix(in srgb,var(--s4) 75%,transparent),0 0 22px -12px color-mix(in srgb,var(--s1) 70%,transparent)}
   .cta-big svg{flex:none}
+  /* Al pasar el cursor: el degradado de la marca llena el botón y el texto pasa a oscuro */
+  .cta-big{isolation:isolate;transition:color .35s,box-shadow .45s,transform .45s cubic-bezier(.2,.8,.2,1)}
+  .cta-big::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,var(--s1),var(--s2),var(--s3),var(--s4),var(--s5),var(--s6),var(--s7),var(--s1));background-size:220% 100%;transform:scaleX(0);transform-origin:left center;transition:transform .55s cubic-bezier(.7,0,.2,1);animation:shift 3.5s linear infinite}
+  .cta-big:hover,.cta-big:focus-visible{color:#0B0B0D;transform:translateY(-3px) scale(1.03);box-shadow:0 14px 40px -10px color-mix(in srgb,var(--s4) 95%,transparent),0 0 46px -6px color-mix(in srgb,var(--s5) 70%,transparent),0 0 34px -8px color-mix(in srgb,var(--s1) 85%,transparent)}
+  .cta-big:hover::before,.cta-big:focus-visible::before{transform:scaleX(1)}
+  .cta-big:hover svg,.cta-big:focus-visible svg{animation:waWiggle .6s ease-in-out}
+  .cta-big:active{transform:translateY(-1px) scale(1.01)}
+  @keyframes waWiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-14deg) scale(1.15)}60%{transform:rotate(10deg) scale(1.1)}}
   .svc-card.is-on .cta-big{box-shadow:0 0 40px -6px color-mix(in srgb,var(--s4) 90%,transparent),0 0 30px -8px color-mix(in srgb,var(--s1) 85%,transparent)}
   .finder-on .svc-card.is-on{transform:translateY(-6px)}
   .img-zoom img{transition:transform 1s cubic-bezier(.2,.8,.2,1),filter .6s}
