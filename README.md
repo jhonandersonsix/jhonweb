@@ -51,3 +51,10 @@ No se compila nada.
 - El workflow ajusta las rutas de `404.html` para que funcionen dentro de `/jhonweb/`.
   Con dominio propio (archivo `web/CNAME`) no hace falta.
 - GitHub Pages ignora el archivo `web/_headers`. Solo lo usa Cloudflare Pages.
+
+## Dominio
+
+Las direcciones completas (canonical, Open Graph, datos estructurados, `sitemap.xml`
+y `robots.txt`) apuntan a `https://jhonandersonsix.github.io/jhonweb`. Cuando se
+compre un dominio, buscar y reemplazar esa dirección por la nueva en todos los
+`.html`, en `robots.txt` y en `sitemap.xml`, y agregar el archivo `web/CNAME`.

@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jhonpariona.com/sitemap.xml
+Sitemap: https://jhonandersonsix.github.io/jhonweb/sitemap.xml
