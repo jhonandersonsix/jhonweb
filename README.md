@@ -39,11 +39,15 @@ regenerar `web/css/estilos.css`. Las instrucciones están en `taller/LEEME-TALLE
 
 ## Publicación (GitHub Pages)
 
-La web se publica sola con el workflow `.github/workflows/pages.yml` cada vez que
-se sube un cambio a `main`. Publica la carpeta `web/` tal cual, sin compilar nada.
+Cada vez que se sube un cambio a `main`, el workflow `.github/workflows/pages.yml`
+copia la carpeta `web/` a la rama `gh-pages`, y GitHub Pages publica esa rama.
+No se compila nada.
 
 - Dirección: https://jhonandersonsix.github.io/jhonweb/
-- Configuración (una sola vez): Settings → Pages → Source: **GitHub Actions**
+- Configuración (una sola vez): Settings → Pages → Source: **Deploy from a branch**
+  → Branch: **gh-pages** / **(root)** → Save
+- No edites la rama `gh-pages` a mano: se reemplaza en cada publicación.
+  Los cambios se hacen en `web/` dentro de `main`.
 - El workflow ajusta las rutas de `404.html` para que funcionen dentro de `/jhonweb/`.
-  Con un dominio propio se ajustan solas.
+  Con dominio propio (archivo `web/CNAME`) no hace falta.
 - GitHub Pages ignora el archivo `web/_headers`. Solo lo usa Cloudflare Pages.

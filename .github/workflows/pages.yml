@@ -1,4 +1,5 @@
-# Publica la carpeta web/ en GitHub Pages cada vez que se sube un cambio a main.
+# Prepara la carpeta web/ y la deja en la rama gh-pages cada vez que se sube un
+# cambio a main. GitHub Pages publica esa rama (Settings → Pages → Deploy from a branch).
 name: Publicar en GitHub Pages
 
 on:
@@ -7,9 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
@@ -18,27 +17,27 @@ concurrency:
 jobs:
   publicar:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
-      - id: pages
-        uses: actions/configure-pages@v5
-
       # 404.html usa rutas que empiezan con "/". En GitHub Pages la web vive en
-      # /jhonweb/, así que se les agrega ese prefijo. Con dominio propio queda vacío.
-      - name: Ajustar rutas de la página 404
-        env:
-          BASE: ${{ steps.pages.outputs.base_path }}
+      # /jhonweb/, así que se les agrega ese prefijo. Si hay dominio propio
+      # (archivo web/CNAME), la web vive en la raíz y no se cambia nada.
+      - name: Preparar la web
         run: |
-          sed -i -E "s#(href|src)=\"/([^/])#\1=\"${BASE}/\2#g; s#url\(/([^/])#url(${BASE}/\1#g" web/404.html
-          grep -n 'href="\|src="\|url(' web/404.html | head -20
+          rm -rf salida && cp -r web salida
+          touch salida/.nojekyll
+          if [ ! -f web/CNAME ]; then
+            BASE="/${GITHUB_REPOSITORY#*/}"
+            sed -i -E "s#(href|src)=\"/([^/])#\1=\"${BASE}/\2#g; s#url\(/([^/])#url(${BASE}/\1#g" salida/404.html
+          fi
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: web
-
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Subir a la rama gh-pages
+        run: |
+          cd salida
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Publica ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
