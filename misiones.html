@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Misiones de clase | Jhon Pariona</title>
+<meta name="description" content="35 juegos y escape rooms que uso en clase en IDAT, USIL, el Instituto de Emprendedores y SISE para practicar diseño, publicidad, marketing, redacción y experiencia de usuario.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jhonandersonsix.github.io/jhonweb/misiones.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jhon Pariona">
+<meta property="og:locale" content="es_PE">
+<meta property="og:title" content="Misiones de clase | Jhon Pariona">
+<meta property="og:description" content="35 misiones secretas y escape rooms para practicar diseño, publicidad, marketing, redacción y experiencia de usuario desde el navegador.">
+<meta property="og:url" content="https://jhonandersonsix.github.io/jhonweb/misiones.html">
+<meta property="og:image" content="https://jhonandersonsix.github.io/jhonweb/img/og-misiones.jpg?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Capturas de las misiones de clase de Jhon Pariona">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jhonandersonsix.github.io/jhonweb/img/og-misiones.jpg?v=2">
+<meta name="theme-color" content="#0B0B0D">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:"Plus Jakarta Sans";font-style:normal;font-weight:200 800;font-display:swap;src:url(fonts/plus-jakarta-sans.woff2) format("woff2")}
+  @property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+  :root{--bg:#0B0B0D;--card:#111114;--line:rgba(255,255,255,.09);--fg:#F4F4F5;--mute:#A1A1AA;
+    --s1:#4FE3C1;--s2:#3FA9F5;--s3:#5B5BF7;--s4:#9B5CF6;--s5:#E8457F;--s6:#FF5A3C;--s7:#FFB23F;
+    --spec-c:conic-gradient(from var(--ang),var(--s1),var(--s2),var(--s3),var(--s4),var(--s5),var(--s6),var(--s7),var(--s1));color-scheme:dark}
+  body{background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
+  :focus-visible{outline:2px solid var(--s1);outline-offset:3px;border-radius:10px}
+  @keyframes ang{to{--ang:360deg}}
+  @keyframes shift{to{background-position:200% 50%}}
+  .t-spec{background:linear-gradient(90deg,var(--s1),var(--s2),var(--s4),var(--s5),var(--s7),var(--s4),var(--s1));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shift 9s linear infinite}
+  .btn-spec{--bb:#111114;border:1.5px solid transparent;color:#fff;background:linear-gradient(var(--bb),var(--bb)) padding-box,var(--spec-c) border-box;animation:ang 5s linear infinite;box-shadow:0 0 28px -8px color-mix(in srgb,var(--s4) 70%,transparent)}
+  .btn-matte{background:linear-gradient(180deg,#1c1c22,#121216);border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+  .btn-matte:hover{border-color:rgba(255,255,255,.24)}
+
+  /* --- Misiones --- */
+  .wrap{max-width:72rem;margin-inline:auto;padding-inline:1rem}
+  @media (min-width:640px){.wrap{padding-inline:1.5rem}}
+  .stats{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+  .stats span{display:inline-flex;align-items:baseline;gap:.4rem;padding:.5rem .9rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);font-size:.875rem;color:#d4d4d8}
+  .stats b{font-size:1.15rem;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}
+  .filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
+  .filters button{display:inline-flex;align-items:center;gap:.5rem;font:inherit;font-size:.875rem;font-weight:600;color:#d4d4d8;padding:.55rem 1rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);cursor:pointer;transition:border-color .2s,background-color .2s,color .2s}
+  .filters button:hover{border-color:rgba(255,255,255,.24);color:#fff}
+  .filters button small{font-size:.75rem;opacity:.7;font-variant-numeric:tabular-nums}
+  .filters button[aria-pressed="true"]{background:#fff;color:#0B0B0D;border-color:#fff}
+
+  ul.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,20rem),1fr));gap:1.1rem;margin-top:1.5rem;list-style:none;padding:0}
+  .mi[hidden]{display:none}
+  .mi a{display:flex;flex-direction:column;height:100%;border-radius:1.25rem;background:var(--card);border:1px solid var(--line);overflow:hidden;color:inherit;text-decoration:none;transition:border-color .25s,transform .25s,box-shadow .25s}
+  .mi a:hover{border-color:rgba(255,255,255,.22);transform:translateY(-4px);box-shadow:0 24px 50px -24px color-mix(in srgb,var(--s4) 55%,transparent)}
+  .shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:#1a1a1f;border-bottom:1px solid var(--line)}
+  .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .mi a:hover .shot img{transform:scale(1.04)}
+  .shot::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,rgba(11,11,13,.85));pointer-events:none}
+  .inst{position:absolute;left:.75rem;bottom:.75rem;z-index:1;display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .7rem;border-radius:999px;background:rgba(11,11,13,.82);border:1px solid rgba(255,255,255,.18);font-size:.78rem;font-weight:700;color:#fff;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .inst img{height:16px;width:auto;display:block}
+  .fmt{position:absolute;right:.75rem;top:.75rem;z-index:1;padding:.3rem .65rem;border-radius:999px;background:rgba(11,11,13,.82);border:1px solid rgba(255,255,255,.18);font-size:.72rem;font-weight:600;color:#e4e4e7}
+  .body{display:flex;flex-direction:column;gap:.55rem;padding:1.1rem 1.2rem 1.25rem;flex:1}
+  .curso{align-self:flex-start;display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:700;color:#0B0B0D;padding:.3rem .7rem;border-radius:.5rem;background:linear-gradient(90deg,var(--c1),var(--c2))}
+  .body h2{font-size:1.3rem;font-weight:800;letter-spacing:-.025em;line-height:1.15;color:#fff;margin:.1rem 0 0}
+  .body p{margin:0;color:#a1a1aa;line-height:1.5;font-size:.9rem}
+  .play{margin-top:auto;padding-top:.6rem;display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.92rem;color:#fff}
+  .play i{font-style:normal;transition:transform .25s}
+  .mi a:hover .play i{transform:translate(3px,-3px)}
+  /* Hero en dos columnas con mazo de misiones */
+  .hero{display:grid;gap:2.5rem;align-items:center}
+  @media (min-width:900px){.hero{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}}
+  .hero-q{margin-top:1.4rem;font-size:1.35rem;font-weight:800;letter-spacing:-.02em;color:#fff}
+  .hero-p{margin-top:.6rem;max-width:36rem;font-size:1.08rem;line-height:1.7;color:#c8c8cf}
+  .hero-p strong{color:#fff}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+  .rand,.see{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.3rem;border-radius:.9rem;font:inherit;font-weight:700;font-size:1rem;cursor:pointer;color:#fff;text-decoration:none}
+  .rand svg{transition:transform .4s}
+  .rand:hover svg{transform:rotate(180deg)}
+  .see{color:#e4e4e7}
+  .deck{position:relative;display:block;aspect-ratio:16/11;width:100%;text-decoration:none;color:inherit}
+  .deck-card{position:absolute;left:8%;top:6%;width:84%;aspect-ratio:16/10;border-radius:1.1rem;overflow:hidden;border:1px solid rgba(255,255,255,.14);background:#1a1a1f;box-shadow:0 30px 60px -25px rgba(0,0,0,.9);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .deck-card img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:opacity .35s}
+  .deck .c3{transform:rotate(-9deg) translate(-8%,6%);opacity:.55}
+  .deck .c2{transform:rotate(6deg) translate(7%,4%);opacity:.75}
+  .deck .c1{transform:rotate(-1.5deg);box-shadow:0 34px 70px -24px color-mix(in srgb,var(--s4) 60%,transparent),0 0 0 1.5px rgba(255,255,255,.08)}
+  .deck:hover .c1{transform:rotate(0) scale(1.03)}
+  .deck:hover .c3{transform:rotate(-13deg) translate(-12%,8%)}
+  .deck:hover .c2{transform:rotate(10deg) translate(11%,5%)}
+  .deck-play{position:absolute;left:50%;top:42%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;display:grid;place-items:center;color:#0B0B0D;background:#fff;box-shadow:0 0 0 10px rgba(255,255,255,.18),0 12px 30px rgba(0,0,0,.5);animation:pulse 2.2s ease-in-out infinite}
+  .deck-play svg{margin-left:3px}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 8px rgba(255,255,255,.16),0 12px 30px rgba(0,0,0,.5)}50%{box-shadow:0 0 0 18px rgba(255,255,255,.04),0 12px 30px rgba(0,0,0,.5)}}
+  .deck-tag{position:absolute;left:0;right:0;bottom:0;padding:2.2rem 1rem .9rem;display:grid;gap:.15rem;background:linear-gradient(transparent,rgba(11,11,13,.92))}
+  .deck-tag b{font-size:1.15rem;font-weight:800;color:#fff;letter-spacing:-.02em}
+  .deck-tag small{font-size:.78rem;color:#d4d4d8}
+
+  /* Tarjetas: botón de jugar sobre la imagen y botón grande abajo */
+  .hover-play{position:absolute;left:50%;top:45%;z-index:2;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#0B0B0D;box-shadow:0 0 0 10px rgba(255,255,255,.16),0 14px 34px rgba(0,0,0,.55);opacity:0;transform:scale(.6);transition:opacity .3s,transform .35s cubic-bezier(.2,1.4,.4,1)}
+  .hover-play svg{margin-left:3px}
+  .mi a:hover .hover-play,.mi a:focus-visible .hover-play{opacity:1;transform:scale(1)}
+  .shot::before{content:"";position:absolute;inset:0;z-index:1;background:rgba(11,11,13,.35);opacity:0;transition:opacity .3s}
+  .mi a:hover .shot::before{opacity:1}
+  .play.btn-spec{--bb:#16161b;align-self:stretch;justify-content:center;margin-top:auto;padding:.75rem 1rem;border-radius:.8rem;animation-duration:6s}
+  .mi a:hover .play.btn-spec{--bb:#1f1f27}
+  @media (hover:none){.hover-play{display:none}}
+
+  /* Llamada a WhatsApp */
+  .wa-cta{margin-top:3rem;display:grid;gap:1.4rem;align-items:center;padding:clamp(1.4rem,3vw,2.2rem);border-radius:1.5rem;background:radial-gradient(120% 140% at 0% 0%,rgba(37,211,102,.22),transparent 55%),#0f1712;border:1.5px solid rgba(37,211,102,.45);box-shadow:0 30px 70px -35px rgba(37,211,102,.55)}
+  @media (min-width:760px){.wa-cta{grid-template-columns:1fr auto}}
+  .wa-cta h2{margin:0;font-size:clamp(1.35rem,2.6vw,1.75rem);font-weight:800;letter-spacing:-.03em;color:#fff;text-wrap:balance}
+  .wa-cta p{margin:.5rem 0 0;color:#c9d8cf;line-height:1.6;max-width:34rem}
+  .wa-big{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;padding:1.05rem 1.6rem;border-radius:1rem;background:#25D366;color:#062b14;font-weight:800;font-size:1.08rem;text-decoration:none;text-align:center;max-width:100%;box-shadow:0 12px 34px -10px rgba(37,211,102,.85),0 0 0 6px rgba(37,211,102,.14);transition:transform .2s,box-shadow .2s,background-color .2s;animation:waGlow 2.6s ease-in-out infinite}
+  .wa-big:hover{background:#2fe072;transform:translateY(-2px);box-shadow:0 18px 40px -10px rgba(37,211,102,.95),0 0 0 8px rgba(37,211,102,.18)}
+  .wa-big span{transition:transform .2s}
+  .wa-big:hover span{transform:translateX(4px)}
+  @keyframes waGlow{0%,100%{box-shadow:0 12px 34px -10px rgba(37,211,102,.85),0 0 0 6px rgba(37,211,102,.14)}50%{box-shadow:0 12px 34px -10px rgba(37,211,102,.85),0 0 0 12px rgba(37,211,102,.06)}}
+  .foot-note{margin-top:1rem;font-size:.85rem;color:#a1a1aa}
+  @media (max-width:759px){.wa-big{width:100%}}
+  .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .deck-wrap{position:relative;justify-self:center;width:100%;max-width:34rem}
+  .deck-pause{position:absolute;right:.4rem;bottom:.2rem;z-index:3;display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .75rem;border-radius:999px;font:inherit;font-size:.78rem;font-weight:600;color:#e4e4e7;cursor:pointer}
+  .note{margin-top:2.5rem;padding:1rem 1.2rem;border-radius:1rem;border:1px dashed var(--line);color:#a1a1aa;font-size:.9rem;line-height:1.6}
+  .note a{color:#fff;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px}
+  /* --- Interactivos: pasaporte, buscador, ruleta, test y proyector --- */
+  .eyebrow{margin:0;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#a1a1aa}
+  .pass{margin-top:3.5rem;padding:clamp(1.2rem,3vw,2rem);border-radius:1.5rem;border:1px solid var(--line);background:radial-gradient(90% 120% at 100% 0%,color-mix(in srgb,var(--s4) 18%,transparent),transparent 60%),radial-gradient(80% 120% at 0% 100%,color-mix(in srgb,var(--s1) 12%,transparent),transparent 60%),#0f0f13}
+  .pass-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.2rem}
+  .pass h2{margin:.5rem 0 0;font-size:clamp(1.5rem,3vw,2rem);font-weight:800;letter-spacing:-.03em;color:#fff}
+  .pass-p{margin:.4rem 0 0;max-width:36rem;color:#a1a1aa;line-height:1.6}
+  .pass-meter{display:flex;align-items:center;gap:.7rem}
+  .pass-meter b{font-size:clamp(2.6rem,6vw,3.6rem);font-weight:800;line-height:1;letter-spacing:-.04em;background:linear-gradient(90deg,var(--s1),var(--s4),var(--s5));-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}
+  .pass-meter span{font-size:.85rem;line-height:1.3;color:#a1a1aa}
+  .pass-bar{position:relative;height:12px;margin-top:1.2rem;border-radius:999px;background:rgba(255,255,255,.07);overflow:hidden}
+  .pass-bar i{position:absolute;inset:0 auto 0 0;width:0;border-radius:inherit;background:linear-gradient(90deg,var(--s1),var(--s2),var(--s4),var(--s5),var(--s7));background-size:200% 100%;animation:shift 4s linear infinite;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+  .badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(9.5rem,1fr));gap:.6rem;margin:1.2rem 0 0;padding:0;list-style:none}
+  .badge{position:relative;display:flex;align-items:center;gap:.6rem;padding:.65rem .75rem;border-radius:.9rem;border:1px solid var(--line);background:rgba(255,255,255,.03);transition:border-color .3s,background-color .3s,transform .3s}
+  .badge i{display:grid;place-items:center;width:38px;height:38px;flex-shrink:0;border-radius:11px;font-style:normal;font-size:1.25rem;background:rgba(255,255,255,.06);filter:grayscale(1);opacity:.45;transition:filter .4s,opacity .4s,transform .4s}
+  .badge b{display:block;font-size:.82rem;color:#e4e4e7}
+  .badge small{display:block;font-size:.72rem;color:#a1a1aa}
+  .badge.on{border-color:color-mix(in srgb,var(--s4) 55%,transparent);background:color-mix(in srgb,var(--s4) 10%,transparent)}
+  .badge.on i{filter:none;opacity:1;background:linear-gradient(135deg,color-mix(in srgb,var(--s1) 35%,transparent),color-mix(in srgb,var(--s5) 35%,transparent))}
+  .badge.on:hover i{transform:rotate(-10deg) scale(1.12)}
+  .badge.pop{animation:badgePop .7s cubic-bezier(.2,.8,.2,1)}
+  @keyframes badgePop{0%{transform:scale(1)}35%{transform:scale(1.12)}100%{transform:scale(1)}}
+  .pass-reset{margin-top:1rem;padding:.4rem 0;font:inherit;font-size:.8rem;color:#a1a1aa;background:none;border:0;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:4px;cursor:pointer}
+  .pass-reset:hover{color:#fff}
+  .tools{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.9rem}
+  .search{flex:1 1 16rem;display:flex;align-items:center;gap:.55rem;padding:0 .95rem;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:#a1a1aa;transition:border-color .2s}
+  .search:focus-within{border-color:rgba(255,255,255,.35)}
+  .search input{flex:1;min-width:0;padding:.7rem 0;font:inherit;font-size:.92rem;color:#fff;background:none;border:0;outline:0}
+  .search input::placeholder{color:#8a8a94}
+  .tools select{flex:0 1 15rem;min-width:0;padding:.65rem 2.2rem .65rem 1rem;font:inherit;font-size:.875rem;font-weight:600;color:#d4d4d8;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a1a1aa' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right .9rem center;-webkit-appearance:none;appearance:none;cursor:pointer}
+  .tools select option{background:#16161b;color:#fff}
+  .tog{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1rem;font:inherit;font-size:.875rem;font-weight:600;color:#d4d4d8;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03);cursor:pointer;transition:border-color .2s,background-color .2s,color .2s}
+  .tog:hover{border-color:rgba(255,255,255,.24);color:#fff}
+  .tog[aria-pressed="true"]{background:#fff;color:#0B0B0D;border-color:#fff}
+  .count{margin:.9rem 0 0;font-size:.85rem;color:#a1a1aa}
+  .empty{margin:1.5rem 0 0;padding:2rem 1rem;text-align:center;border-radius:1rem;border:1px dashed var(--line);color:#a1a1aa}
+  .mi{position:relative}
+  .new-tag{position:absolute;right:.75rem;bottom:.75rem;z-index:1;padding:.3rem .6rem;border-radius:999px;font-size:.7rem;font-weight:800;letter-spacing:.02em;color:#0B0B0D;background:linear-gradient(90deg,var(--s7),var(--s5));box-shadow:0 6px 18px -6px color-mix(in srgb,var(--s5) 80%,transparent);animation:newPulse 2.4s ease-in-out infinite}
+  @keyframes newPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+  .stamp{position:absolute;left:50%;top:44%;z-index:2;padding:.45rem .9rem;border:3px solid var(--s1);border-radius:.6rem;font-size:1rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--s1);background:rgba(11,11,13,.72);transform:translate(-50%,-50%) rotate(-12deg) scale(0);opacity:0;transition:transform .5s cubic-bezier(.3,1.6,.5,1),opacity .3s;pointer-events:none}
+  .mi.played .stamp{transform:translate(-50%,-50%) rotate(-12deg) scale(1);opacity:1}
+  .mi.played a:hover .stamp{opacity:0}
+  .mi.played a{border-color:color-mix(in srgb,var(--s1) 40%,transparent)}
+  .qr-btn{position:absolute;left:.75rem;top:.75rem;z-index:3;display:grid;place-items:center;width:38px;height:38px;border-radius:11px;color:#fff;background:rgba(11,11,13,.82);border:1px solid rgba(255,255,255,.2);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);cursor:pointer;transition:transform .25s,background-color .25s,border-color .25s}
+  .qr-btn:hover,.qr-btn:focus-visible{transform:scale(1.1);background:#fff;color:#0B0B0D;border-color:#fff}
+  /* Diálogos */
+  .dlg{width:min(46rem,calc(100vw - 2rem));max-height:calc(100dvh - 2rem);padding:clamp(1rem,3vw,1.6rem);border-radius:1.4rem;border:1px solid rgba(255,255,255,.14);background:#111115;color:var(--fg);box-shadow:0 40px 120px -30px rgba(0,0,0,.9),0 0 60px -20px color-mix(in srgb,var(--s4) 45%,transparent)}
+  .dlg::backdrop{background:rgba(5,5,8,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  .dlg[open]{animation:dlgIn .4s cubic-bezier(.2,.8,.2,1)}
+  @keyframes dlgIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+  .dlg-head{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  .dlg-head h2{margin:0;font-size:clamp(1.2rem,2.6vw,1.5rem);font-weight:800;letter-spacing:-.025em}
+  .dlg-x{display:grid;place-items:center;width:40px;height:40px;flex-shrink:0;border-radius:12px;font:inherit;font-size:1rem;color:#e4e4e7;background:rgba(255,255,255,.06);border:1px solid var(--line);cursor:pointer}
+  .dlg-x:hover{background:rgba(255,255,255,.12);color:#fff}
+  .dlg-act{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem}
+  .go,.alt{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.2rem;border-radius:.9rem;font:inherit;font-weight:700;font-size:.95rem;color:#fff;text-decoration:none;cursor:pointer}
+  .go{flex:1 1 12rem}
+  .snd{width:46px;padding:0;font-size:1.05rem;border-radius:.9rem;cursor:pointer}
+  .reel{position:relative;margin-top:1.1rem;height:12.5rem;border-radius:1rem;overflow:hidden;background:#0b0b0e;border:1px solid var(--line);-webkit-mask:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+  .reel-strip{position:absolute;left:0;top:.75rem;display:flex;gap:.75rem;will-change:transform}
+  .reel-it{width:12rem;flex-shrink:0;border-radius:.8rem;overflow:hidden;background:#17171c;border:1px solid var(--line);transition:transform .4s,border-color .4s,box-shadow .4s}
+  .reel-it img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+  .reel-it b{display:block;padding:.45rem .6rem;font-size:.78rem;color:#e4e4e7;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .reel-it.win{border-color:var(--s1);box-shadow:0 0 0 2px var(--s1),0 0 40px -6px var(--s1);transform:scale(1.06)}
+  .reel-mark{position:absolute;left:50%;top:0;bottom:0;width:3px;margin-left:-1.5px;background:linear-gradient(var(--s1),var(--s5));box-shadow:0 0 14px var(--s1);border-radius:3px}
+  .rul-res{min-height:1.6em;margin:.9rem 0 0;font-size:1.05rem;color:#d4d4d8}
+  .rul-res b{color:#fff}
+  .quiz-steps{display:flex;gap:.4rem;margin-top:1rem}
+  .quiz-steps i{flex:1;height:6px;border-radius:999px;background:rgba(255,255,255,.08);transition:background-color .4s}
+  .quiz-steps i.on{background:linear-gradient(90deg,var(--s1),var(--s4))}
+  .q-t{margin:1.2rem 0 .8rem;font-size:1.15rem;font-weight:800;color:#fff}
+  .q-ops{display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:.55rem}
+  .q-op{display:flex;align-items:center;gap:.7rem;padding:.85rem 1rem;font:inherit;font-size:.95rem;font-weight:600;text-align:left;color:#e4e4e7;border-radius:.9rem;border:1px solid var(--line);background:rgba(255,255,255,.03);cursor:pointer;transition:transform .25s,border-color .25s,background-color .25s}
+  .q-op span{font-size:1.35rem}
+  .q-op:hover,.q-op:focus-visible{transform:translateY(-2px);border-color:color-mix(in srgb,var(--s4) 60%,transparent);background:color-mix(in srgb,var(--s4) 12%,transparent);color:#fff}
+  .q-best{display:grid;gap:1rem;margin-top:1.2rem;padding:1rem;border-radius:1.1rem;border:1.5px solid color-mix(in srgb,var(--s1) 55%,transparent);background:color-mix(in srgb,var(--s1) 7%,transparent)}
+  @media (min-width:600px){.q-best{grid-template-columns:15rem 1fr;align-items:center}}
+  .q-best img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:.8rem}
+  .q-best h3{margin:.3rem 0 .2rem;font-size:1.35rem;font-weight:800;letter-spacing:-.02em;color:#fff}
+  .q-best p{margin:0;color:#a1a1aa;font-size:.9rem}
+  .q-more{display:grid;gap:.5rem;margin-top:.9rem}
+  .q-more a{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem .9rem;border-radius:.8rem;border:1px solid var(--line);color:#e4e4e7;text-decoration:none;font-size:.9rem}
+  .q-more a:hover{border-color:rgba(255,255,255,.3);color:#fff}
+  .q-more small{color:#a1a1aa}
+  .dlg-pro{width:min(64rem,calc(100vw - 2rem))}
+  .pro-grid{display:grid;gap:1.4rem;margin-top:1rem;align-items:center}
+  @media (min-width:760px){.pro-grid{grid-template-columns:1.1fr .9fr}}
+  .pro-info img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:1rem;border:1px solid var(--line)}
+  .pro-info h2{margin:1rem 0 .3rem;font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.03em;color:#fff}
+  .pro-info p{margin:0;color:#a1a1aa;font-size:1rem}
+  .pro-qr{display:grid;justify-items:center;gap:.8rem}
+  .qr-box{width:min(100%,20rem);aspect-ratio:1;padding:1rem;border-radius:1.2rem;background:#fff;box-shadow:0 0 0 6px color-mix(in srgb,var(--s4) 35%,transparent),0 30px 60px -20px rgba(0,0,0,.8)}
+  .qr-box svg{display:block;width:100%;height:100%}
+  .qr-t{margin:0;font-size:1.1rem;font-weight:700;color:#fff;text-align:center}
+  .dlg-pro:fullscreen{width:100vw;max-width:none;height:100vh;max-height:none;border-radius:0;display:flex;flex-direction:column;justify-content:center}
+  .toast{position:fixed;left:50%;bottom:1.5rem;z-index:60;padding:.85rem 1.2rem;border-radius:1rem;font-weight:700;color:#fff;background:#18181d;border:1px solid color-mix(in srgb,var(--s4) 60%,transparent);box-shadow:0 20px 50px -15px rgba(0,0,0,.9),0 0 30px -10px var(--s4);transform:translate(-50%,150%);opacity:0;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .4s;pointer-events:none;max-width:calc(100vw - 2rem);text-align:center}
+  .toast.show{transform:translate(-50%,0);opacity:1}
+  .confetti{position:fixed;inset:0;z-index:70;width:100%;height:100%;pointer-events:none}
+  .foot-nav a{display:inline-block;padding-block:.3rem}
+  @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}.mi a:hover,.mi a:hover .shot img{transform:none}.hover-play{transform:none}}
+</style>
+<script>
+  /* Aplica la paleta de color que el visitante eligió en la página principal */
+  (function(){ var L=[null,['#4FE3C1','#3FD7E8','#3FA9F5','#4E7CF7','#5B5BF7','#7C5CF6','#9B5CF6'],['#9B5CF6','#C24FD8','#E8457F','#FF5A3C','#FF7A3C','#FF9A3C','#FFB23F'],['#4FE3C1','#B6F24F','#F2E94F','#FFB23F','#FF5A3C','#E8457F','#9B5CF6']];
+    try{ var i=parseInt(localStorage.getItem('jp-luz'),10); if(L[i]) L[i].forEach(function(c,k){ document.documentElement.style.setProperty('--s'+(k+1), c); }); }catch(e){} })();
+</script>
+<link rel="stylesheet" href="css/estilos.css?v=20261006">
+</head>
+<body>
+<header class="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 pt-6 sm:px-6">
+  <a href="index.html" class="flex items-center gap-2.5 rounded-xl px-1 py-1 font-bold tracking-tight">
+    <span class="btn-spec grid h-9 w-9 place-items-center rounded-xl text-[13px] font-extrabold" style="animation-duration:7s">JP</span>
+    <span>Jhon Pariona</span>
+  </a>
+  <a href="index.html" class="btn-matte inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-zinc-200"><span aria-hidden="true">←</span> Volver a la web</a>
+</header>
+
+<main class="wrap pt-14 sm:pt-20">
+  <section class="hero">
+    <div>
+      <p class="text-[11px] font-semibold uppercase tracking-[.2em] text-zinc-400">Docencia</p>
+      <h1 class="mt-4 text-balance text-4xl font-extrabold tracking-[-.035em] sm:text-5xl">Misiones de <span class="t-spec">clase.</span></h1>
+      <p class="hero-q">¿Estás listo para el desafío?</p>
+      <p class="hero-p">Entra a nuestras misiones secretas y escape rooms. Demuestra lo que sabes, supera los acertijos y compite (o colabora) con tus compañeros directamente desde tu navegador. <strong>¡Que comience el juego!</strong></p>
+      <div class="hero-cta">
+        <button type="button" class="btn-spec rand" id="rand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.3" fill="currentColor"/></svg>Jugar una misión al azar<span class="sr"> (se abre en una pestaña nueva)</span></button>
+        <button type="button" class="btn-matte see" id="quiz-open"><span aria-hidden="true">🎯</span> ¿Qué misión es para ti?</button>
+        <a href="#misiones" class="btn-matte see">Ver todas las misiones <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="stats"><span><b>35</b> misiones</span><span><b>5</b> instituciones</span><span><b>12</b> cursos</span></div>
+    </div>
+    <div class="deck-wrap">
+    <a class="deck" id="deck" href="https://claude.ai/artifact/3DoFCtZUzg1jbemDwfQisS" target="_blank" rel="noopener" aria-label="Jugar la misión destacada">
+      <span class="deck-card c3" aria-hidden="true"><img src="img/misiones/cyber-kiri.webp" width="800" height="500" alt=""></span>
+      <span class="deck-card c2" aria-hidden="true"><img src="img/misiones/desafio-gondola.webp" width="800" height="500" alt=""></span>
+      <span class="deck-card c1"><img id="deck-img" src="img/misiones/museo-desordenado.webp" width="800" height="500" alt="">
+        <span class="deck-play" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+        <span class="deck-tag"><b id="deck-t">El Museo Desordenado</b><small id="deck-c">IDAT · Diagramación y Composición</small></span>
+      </span>
+    </a>
+    <button type="button" class="btn-matte deck-pause" id="deck-pause" aria-pressed="false"><span aria-hidden="true" id="deck-pi">❚❚</span><span id="deck-pl">Pausar</span></button>
+    </div>
+  </section>
+
+  <section class="pass" id="pasaporte" aria-labelledby="pass-h">
+    <div class="pass-top">
+      <div>
+        <p class="eyebrow">Tu pasaporte de misiones</p>
+        <h2 id="pass-h">Colecciona sellos jugando.</h2>
+        <p class="pass-p">Cada misión que abres recibe un sello. Juega, completa institutos y desbloquea insignias. Tu progreso se guarda solo en este dispositivo.</p>
+      </div>
+      <div class="pass-meter"><b id="pass-n">0</b><span>de <span id="pass-t">35</span><br>misiones</span></div>
+    </div>
+    <div class="pass-bar" id="pass-bar" role="progressbar" aria-label="Misiones jugadas" aria-valuemin="0" aria-valuemax="35" aria-valuenow="0"><i id="pass-fill"></i></div>
+    <ul class="badges" id="badges"></ul>
+    <button type="button" class="pass-reset" id="pass-reset">Reiniciar pasaporte</button>
+  </section>
+
+  <div class="filters" role="group" aria-label="Filtrar misiones por institución">
+    <button type="button" aria-pressed="true" data-f="todas">Todas <small>35</small></button>
+    <button type="button" aria-pressed="false" data-f="idat">IDAT <small>12</small></button>
+    <button type="button" aria-pressed="false" data-f="ie">Instituto de Emprendedores <small>17</small></button>
+    <button type="button" aria-pressed="false" data-f="usil">USIL <small>1</small></button>
+    <button type="button" aria-pressed="false" data-f="sise">SISE <small>4</small></button>
+    <button type="button" aria-pressed="false" data-f="ca">Corriente Alterna <small>1</small></button>
+  </div>
+  <div class="tools">
+    <label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input type="search" id="q" placeholder="Busca por nombre, curso o tema" aria-label="Buscar misiones" autocomplete="off"></label>
+    <select id="curso" aria-label="Filtrar por curso"><option value="">Todos los cursos</option></select>
+    <button type="button" class="tog" id="only-new" aria-pressed="false"><span aria-hidden="true">✨</span> Nuevas</button>
+    <button type="button" class="tog" id="only-todo" aria-pressed="false"><span aria-hidden="true">🎯</span> Sin jugar</button>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+  <p class="empty" id="empty" hidden>No encontramos misiones con eso. Prueba otra palabra o quita un filtro.</p>
+
+  <!--
+    CÓMO AGREGAR UNA MISIÓN
+    Copia un bloque <li class="mi"> completo y cambia:
+      data-i   → la institución para el filtro: idat, ie, usil, sise o ca (si agregas otra, agrega también su botón arriba)
+      style    → los dos colores de la etiqueta del curso (--c1 y --c2)
+      href     → el enlace del artefacto
+      img src  → la captura del juego, en img/misiones/ (800 × 500 px, .webp)
+      .inst    → la institución
+      .fmt     → el formato
+      .curso   → el curso
+      h2 y p   → el nombre y una línea de qué trata
+    Actualiza también los números de arriba (misiones, instituciones, cursos y los de cada filtro).
+    El artefacto tiene que estar compartido como "cualquiera con el enlace", si no, el visitante verá que no tiene acceso.
+  -->
+  <ul class="grid" id="misiones">
+    <!-- ===== IDAT · Diagramación y Composición ===== -->
+    <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/3DoFCtZUzg1jbemDwfQisS" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/museo-desordenado.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de El Museo Desordenado"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Misión · 5 salas</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>El Museo Desordenado</h2><p>Elementos, peso visual, jerarquía, principios y proporción áurea.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/W7gcwJgmQiq5nVSkJxMetB" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/imprenta-express.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Imprenta Express"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Por equipos · 5 órdenes</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Imprenta Express</h2><p>Principios de diagramación, estilos, tipografía, legibilidad y color.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/2xDi21QbYRMagL1Qv151N5" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/rayos-x-grafico.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Rayos X Gráfico"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Laboratorio · 4 niveles</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Rayos X Gráfico</h2><p>La estructura de una pieza, cómo adaptarla a otro formato y las etapas del boceto.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/8CrpPNcYa6skiZsHcdKtFf" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/mision-brief.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Brief"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Escape room · 4 salas</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Misión Brief</h2><p>Brief, público e insight, concepto, y rediseño o rediagramación.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/Wif5xqpWbNPPUtcGRCoiMo" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/arquitectos-reticula.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Arquitectos de la Retícula"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Juego por niveles · 4 niveles</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Arquitectos de la Retícula</h2><p>Partes y tipos de retícula, y el afiche del Festival del Cacao Peruano módulo a módulo.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/5Srwkuxi1H5radfyQcX78Z" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/ruta-campana.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Ruta de Campaña"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Ruta · 4 paraderos</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Ruta de Campaña</h2><p>Formatos, soportes, acabados y medios para el plan de la marca Sachi.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/BAhAJT2pVV8NVsnauy1esW" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/cuarto-oscuro.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Cuarto Oscuro"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Laboratorio · 4 bandejas</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Cuarto Oscuro</h2><p>Encuadre, RGB o CMYK, resolución y tipos de archivo para la campaña de Sachi.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="idat" style="--c1:var(--s1);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/XHohYKB42xnURdhSasefoM" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/laboratorio-prompts.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Laboratorio de Prompts"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Laboratorio · 4 niveles</span></div>
+        <div class="body"><span class="curso">Diagramación y Composición</span><h2>Laboratorio de Prompts</h2><p>Partes de un prompt, el brief de Sachi, qué herramienta de IA usar y su uso responsable.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <!-- ===== IDAT · Diseño web ===== -->
+    <li class="mi" data-i="idat" style="--c1:var(--s3);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/TxLg5XUZCbko2FwrgfBAMB" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/detectives-ux.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Detectives UX"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Escape room · 4 salas</span></div>
+        <div class="body"><span class="curso">Diseño web: interfaces y prototipado</span><h2>Detectives UX</h2><p>Hallazgos, perfil de la persona, recorrido del usuario y pregunta de diseño.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="idat" style="--c1:var(--s3);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/TzrScauwCcoATpXSUrksyR" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/ruta-ux.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de La Ruta UX"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Ruta · 6 paradas</span></div>
+        <div class="body"><span class="curso">Diseño web: interfaces y prototipado</span><h2>La Ruta UX</h2><p>Seis paradas con teoría, ejemplo y reto sobre el caso de una app.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="idat" style="--c1:var(--s3);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/2cZNn2jix47HisPqQf3gdP" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/mision-componentes.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Componentes"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Misión · 3 niveles</span></div>
+        <div class="body"><span class="curso">Diseño web: interfaces y prototipado</span><h2>Misión Componentes</h2><p>Atomic Design, componentes y auto layout: arma una interfaz como un Lego.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="idat" style="--c1:var(--s3);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/LhBWE9Q3iYpJJYSPawTrq6" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/mision-prototipo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Prototipo"><span class="inst"><img src="img/logos/idat.png" width="43" height="72" alt="">IDAT</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Misión · 3 niveles</span></div>
+        <div class="body"><span class="curso">Diseño web: interfaces y prototipado</span><h2>Misión Prototipo</h2><p>Diez retos rápidos de ideación, Figma y diseño visual.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <!-- ===== Instituto de Emprendedores (USIL) ===== -->
+    <li class="mi" data-i="ie" style="--c1:var(--s5);--c2:var(--s6)">
+      <a href="https://claude.ai/artifact/1yf5wrEaA1vA5v41nZC8xa" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/cyber-kiri.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Cyber Kiri"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Escape room · 5 salas</span></div>
+        <div class="body"><span class="curso">Marketing Digital</span><h2>Misión Cyber Kiri</h2><p>Tipos de e-commerce, modelos de negocio, embudo, checkout y pagos EDI.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s6);--c2:var(--s7)">
+      <a href="https://claude.ai/artifact/8jEvm6zW3iE1eb23wn4Y98" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/desafio-gondola.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Desafío Góndola"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Trivia · 6 rondas</span></div>
+        <div class="body"><span class="curso">Trade Marketing</span><h2>Desafío Góndola</h2><p>Shopper, cobertura, share of shelf, promociones y precios psicológicos.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s7);--c2:var(--s1)">
+      <a href="https://claude.ai/artifact/8c9P1JkJRdzbvtEc8abLbR" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/reto-director-creativo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Reto Director Creativo"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Trivia · 6 rondas</span></div>
+        <div class="body"><span class="curso">Marketing Directo</span><h2>Reto Director Creativo</h2><p>Lectura visual, funciones de la imagen, impresión y evolución de los medios.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/TfPCKizyZbahLmFoq6AZHk" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/lapiz-rojo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Operación Lápiz Rojo"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Escape room · 5 candados</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Operación Lápiz Rojo</h2><p>Revisar una campaña dirigida a niños, niñas y adolescentes antes de que salga al aire.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s1);--c2:var(--s3)">
+      <a href="https://claude.ai/artifact/7vc3fq8y3k4MzGczNU5Hhk" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/paratiquiz.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de #ParaTiQuiz"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz por equipos · 10 preguntas</span></div>
+        <div class="body"><span class="curso">Social Media Manager</span><h2>#ParaTiQuiz</h2><p>El universo TikTok: algoritmo, tendencias, social search, métricas y anuncios.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s1);--c2:var(--s3)">
+      <a href="https://claude.ai/artifact/HBQYKtks5294EhjiCjidJ1" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/rescate-cuentas.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Rescate de Cuentas"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Juego por equipos · 5 niveles</span></div>
+        <div class="body"><span class="curso">Social Media Manager</span><h2>Rescate de Cuentas</h2><p>Rescatar las redes de una cevichería: perfil, contenidos, métricas, Meta e Instagram.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/FPWKNJiRHjchxXs1MqrvoC" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/semaforo-conar.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de El Semáforo del CONAR"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz · 10 anuncios</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>El Semáforo del CONAR</h2><p>Decidir en 20 segundos si cada anuncio sale al aire o va al CONAR.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/17bJ2fB3NJVDn2CYBXxrgM" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/semaforo-etico.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Semáforo Ético de Campañas"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Semáforo · 8 decisiones</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Semáforo Ético de Campañas</h2><p>Dirigir un comité creativo y dar verde, ámbar o rojo a 8 decisiones de campaña.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/H9AKxqJoz8wteASDScZKuV" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/detector-encubierta.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Detector de Publicidad Encubierta"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Simulador · 8 casos</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Detector de Publicidad Encubierta</h2><p>Auditar publicaciones de redes, apps y correos y detectar qué norma se incumple.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/3qMbfLzVEACDdZU7dUCqVo" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/copy-advice.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Copy Advice CONAR"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Juego de rol · 8 borradores</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Copy Advice CONAR</h2><p>Dictaminar si cada borrador sale al aire o qué principio del Código se debe corregir.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/BMDYfUHZJmDDSt8pvRAKeJ" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/inspector-ccd.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Inspector CCD"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Juego de rol · 8 expedientes</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Inspector CCD</h2><p>Publicidad dirigida a menores: qué norma infringe cada anuncio, o si no hay infracción.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s2);--c2:var(--s1)">
+      <a href="https://claude.ai/artifact/1wjpzVuieeNwHQrLKGTVLA" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/arranque-crm.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Arranque CRM"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz · 10 preguntas</span></div>
+        <div class="body"><span class="curso">Customer Relationship Management</span><h2>Arranque CRM</h2><p>Calentamiento sobre los tipos de CRM con podio en vivo.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s2);--c2:var(--s1)">
+      <a href="https://claude.ai/artifact/4BykDQSRimzLWzPmq4TXFv" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/mision-crm.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión CRM"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Juego por equipos · 5 niveles</span></div>
+        <div class="body"><span class="curso">Customer Relationship Management</span><h2>Misión CRM</h2><p>Ordenar el CRM de una pastelería: historia, tipos de CRM, HubSpot y pipeline.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s7);--c2:var(--s6)">
+      <a href="https://claude.ai/artifact/SwPLHsM3mthSZBg5ecmxhS" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/cm-por-un-dia.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de CM por un Día"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Simulador · 8 decisiones</span></div>
+        <div class="body"><span class="curso">Campaña Integral</span><h2>CM por un Día</h2><p>Ser Community Manager de «Café Barrio» durante cuatro momentos del día.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s7);--c2:var(--s6)">
+      <a href="https://claude.ai/artifact/9rvtoxUPasNXQUR716keVm" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/dulce-o-truco.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Dulce o Truco Publicitario"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz de Halloween</span></div>
+        <div class="body"><span class="curso">Campaña Integral</span><h2>Dulce o Truco Publicitario</h2><p>Medios ATL y BTL, estrategias y métricas como CTR, CPC, CPM y ROI.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s7);--c2:var(--s6)">
+      <a href="https://claude.ai/artifact/DQrK1P6pEHBQ6AQPRQXt4j" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/match-creativo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Match Creativo"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz · 10 preguntas</span></div>
+        <div class="body"><span class="curso">Campaña Integral</span><h2>Match Creativo</h2><p>Publicidad 360°, tradicional, digital y de contenidos.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="ie" style="--c1:var(--s7);--c2:var(--s6)">
+      <a href="https://claude.ai/artifact/W2dy7Jg4Whc468x5ETQ9s3" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/planner-medios.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Planner de Medios"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Misión · 4 niveles</span></div>
+        <div class="body"><span class="curso">Campaña Integral</span><h2>Misión Planner de Medios</h2><p>ATL y BTL, estrategias y el plan de medios de Helados Chaska.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <!-- ===== USIL ===== -->
+    <li class="mi" data-i="usil" style="--c1:var(--s2);--c2:var(--s3)">
+      <a href="https://claude.ai/artifact/TEsUZmXSU5r4M9TZWbkoPL" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/helados-chaska.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Helados Chaska"><span class="inst"><img src="img/logos/usil.png" width="181" height="72" alt="">USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Misión de agencia · 6 pasos</span></div>
+        <div class="body"><span class="curso">Diseño gráfico y medios digitales</span><h2>Misión Helados Chaska</h2><p>Brief creativo, plan de medios con S/ 3,000 y cronograma de campaña.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <!-- ===== SISE ===== -->
+    <li class="mi" data-added="2026-11-22" data-i="sise" style="--c1:var(--s2);--c2:var(--s7)">
+      <a href="https://claude.ai/artifact/UeYqpLgbuCF1UuTAEaSopD" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/repaso-relampago.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Repaso Relámpago"><span class="inst">SISE</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz · 10 preguntas</span></div>
+        <div class="body"><span class="curso">Taller de Técnicas para la Redacción</span><h2>Repaso Relámpago</h2><p>Lectura, signos, funciones del lenguaje y partes de la noticia.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="sise" style="--c1:var(--s2);--c2:var(--s7)">
+      <a href="https://claude.ai/artifact/XdsW6ir71hGJrkAwGoUZrm" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/duelo-lectores.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Duelo de Lectores"><span class="inst">SISE</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Duelo · 3 rondas</span></div>
+        <div class="body"><span class="curso">Taller de Técnicas para la Redacción</span><h2>Duelo de Lectores</h2><p>Funciones del lenguaje, momentos y niveles de lectura contra el reloj.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="sise" style="--c1:var(--s2);--c2:var(--s7)">
+      <a href="https://claude.ai/artifact/CVeeeJeoEdUh2QJLQa5ppB" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/detectives-signo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Detectives del Signo"><span class="inst">SISE</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Detective · 3 rondas</span></div>
+        <div class="body"><span class="curso">Taller de Técnicas para la Redacción</span><h2>Detectives del Signo</h2><p>Clases de signo, ideas clave de un texto y lectura rápida.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-added="2026-11-22" data-i="sise" style="--c1:var(--s6);--c2:var(--s5)">
+      <a href="https://claude.ai/artifact/Ue8PmXPsexYqxDc4Rqwxma" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/pasa-imprenta.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de ¿Pasa a imprenta?"><span class="inst">SISE</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Duelo por equipos · estaciones</span></div>
+        <div class="body"><span class="curso">Pre Prensa Digital</span><h2>¿Pasa a imprenta?</h2><p>Decidir si cada archivo está listo para imprenta: CMYK, modo líneas y composición.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <!-- ===== Corriente Alterna ===== -->
+    <li class="mi" data-added="2026-11-22" data-i="ca" style="--c1:var(--s4);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/5eW9ittnS61R9JCK5BRXtr" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/relampago-ia.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Relámpago IA"><span class="inst">Corriente Alterna</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz · 6 preguntas</span></div>
+        <div class="body"><span class="curso">AI Creative Day · IA aplicada al diseño</span><h2>Misión Relámpago IA</h2><p>Cuánto dominas la IA aplicada al diseño gráfico, en grupo y contra el reloj.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+  </ul>
+
+  <section class="wa-cta">
+    <div>
+      <h2>¿Quieres una misión para tu grupo o tu equipo?</h2>
+      <p>Te ayudo a usar estas misiones en tu clase o a diseñar una a la medida de tu curso o tu empresa.</p>
+    </div>
+    <a class="wa-big" href="https://wa.me/51932024404?text=Hola%20Jhon%2C%20vi%20tus%20misiones%20de%20clase%20y%20quiero%20conversar." target="_blank" rel="noopener">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.28.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.56.94.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.43-9.43 2.52 0 4.89.98 6.67 2.76a9.37 9.37 0 0 1 2.76 6.68c0 5.2-4.23 9.42-9.44 9.42M20.08 3.9A11.3 11.3 0 0 0 12.05.58C5.78.58.67 5.68.67 11.95c0 2 .52 3.96 1.52 5.69L.58 23.42l5.92-1.55a11.4 11.4 0 0 0 5.44 1.38h.01c6.27 0 11.38-5.1 11.38-11.37 0-3.04-1.18-5.9-3.33-8.05"/></svg>
+      Escríbeme por WhatsApp
+      <span aria-hidden="true">→</span>
+    </a>
+  </section>
+  <p class="foot-note">Las misiones se abren en una pestaña nueva, en Claude.</p>
+</main>
+
+<footer class="mt-20 border-t border-white/5 bg-[#0d0d10]">
+  <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-10 text-sm text-zinc-400 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+    <p>© 2026 Jhon Pariona · Lima, Perú</p>
+    <nav class="foot-nav flex flex-wrap gap-x-5 gap-y-2" aria-label="Información legal">
+      <a href="aviso-legal.html" class="hover:text-white">Aviso legal</a>
+      <a href="privacidad.html" class="hover:text-white">Privacidad</a>
+      <a href="cookies.html" class="hover:text-white">Cookies</a>
+      <a href="https://wa.me/51932024404" target="_blank" rel="noopener" class="hover:text-white">WhatsApp</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Ruleta de misiones -->
+<dialog class="dlg" id="dlg-rul" aria-labelledby="rul-h">
+  <div class="dlg-head"><h2 id="rul-h">🎰 Ruleta de misiones</h2><button type="button" class="dlg-x" data-close aria-label="Cerrar">✕</button></div>
+  <div class="reel" aria-hidden="true"><div class="reel-strip" id="reel"></div><i class="reel-mark"></i></div>
+  <p class="rul-res" id="rul-res" aria-live="polite"></p>
+  <div class="dlg-act">
+    <a class="btn-spec go" id="rul-go" href="#" target="_blank" rel="noopener"><span aria-hidden="true">▶</span> ¡Jugar esta misión!</a>
+    <button type="button" class="btn-matte alt" id="rul-again"><span aria-hidden="true">🎲</span> Girar otra vez</button>
+    <button type="button" class="btn-matte alt" id="rul-pro"><span aria-hidden="true">📽️</span> Proyectar</button>
+    <button type="button" class="btn-matte snd" id="snd" aria-pressed="true" aria-label="Sonido">🔊</button>
+  </div>
+</dialog>
+
+<!-- ¿Qué misión es para ti? -->
+<dialog class="dlg" id="dlg-quiz" aria-labelledby="quiz-h">
+  <div class="dlg-head"><h2 id="quiz-h">🎯 ¿Qué misión es para ti?</h2><button type="button" class="dlg-x" data-close aria-label="Cerrar">✕</button></div>
+  <div class="quiz-steps" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div id="quiz-body" aria-live="polite"></div>
+</dialog>
+
+<!-- Modo proyector -->
+<dialog class="dlg dlg-pro" id="dlg-pro" aria-labelledby="pro-h">
+  <div class="dlg-head"><p class="eyebrow">Modo proyector</p><button type="button" class="dlg-x" data-close aria-label="Cerrar">✕</button></div>
+  <div class="pro-grid">
+    <div class="pro-info">
+      <img id="pro-img" src="img/misiones/museo-desordenado.webp" width="800" height="500" alt="">
+      <h2 id="pro-h">Misión</h2>
+      <p id="pro-c"></p>
+    </div>
+    <div class="pro-qr">
+      <div class="qr-box" id="pro-qr" role="img" aria-label="Código QR de la misión"></div>
+      <p class="qr-t"><span aria-hidden="true">📱</span> Escanea con tu celular y juega</p>
+    </div>
+  </div>
+  <div class="dlg-act">
+    <a class="btn-spec go" id="pro-go" href="#" target="_blank" rel="noopener"><span aria-hidden="true">▶</span> Abrir aquí</a>
+    <button type="button" class="btn-matte alt" id="pro-fs"><span aria-hidden="true">⛶</span> Pantalla completa</button>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+
+<script>
+(function(){
+  var $ = function(s, c){ return (c || document).querySelector(s); };
+  var cards = [].slice.call(document.querySelectorAll('#misiones .mi'));
+  var btns = [].slice.call(document.querySelectorAll('[data-f]'));
+  var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var NUEVO_DIAS = 60;
+  function norm(t){ return (t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+
+  // Datos de cada tarjeta, leídos del propio HTML
+  var M = cards.map(function(c){
+    var a = c.querySelector('a');
+    var d = {
+      el:c, a:a, href:a.href, id:a.href.split('/').pop(),
+      t:c.querySelector('h2').textContent, inst:c.querySelector('.inst').textContent.trim(), i:c.getAttribute('data-i'),
+      curso:c.querySelector('.curso').textContent, fmt:c.querySelector('.fmt').textContent, p:c.querySelector('.body p').textContent,
+      img:c.querySelector('.shot img').getAttribute('src')
+    };
+    var added = c.getAttribute('data-added');
+    d.nuevo = !!added && (Date.now() - new Date(added + 'T00:00:00').getTime()) / 864e5 < NUEVO_DIAS;
+    d.txt = norm([d.t, d.inst, d.curso, d.fmt, d.p].join(' '));
+    // Tema y formato para el test «¿Qué misión es para ti?»
+    var cu = norm(d.curso), f = norm(d.fmt), tt = norm(d.t);
+    d.tema = /etica/.test(cu) ? 'etica' : /redaccion/.test(cu) ? 'lectura' : /diseno web/.test(cu) ? 'ux' : /ai creative|prompts/.test(cu + ' ' + tt) ? 'ia' : /diagramacion|prensa/.test(cu) ? 'diseno' : 'marketing';
+    if(/prompts|ia\b/.test(tt)) d.tema2 = 'ia';
+    if(/diseno grafico/.test(cu)) d.tema2 = 'diseno';
+    d.forma = /escape/.test(f) ? 'escape' : /simulador|rol|agencia/.test(f) ? 'sim' : /quiz|trivia|duelo|semaforo|detective/.test(f) ? 'quiz' : 'niveles';
+    return d;
+  });
+  function byId(id){ for(var k = 0; k < M.length; k++) if(M[k].id === id) return M[k]; return null; }
+
+  // Nombre claro para lectores de pantalla, etiqueta «Nuevo», sello y botón de proyector
+  M.forEach(function(d){
+    d.a.setAttribute('aria-label', 'Jugar ' + d.t + '. ' + d.inst + ', curso ' + d.curso + '. ' + d.fmt + '.' + (d.nuevo ? ' Nueva.' : '') + ' Se abre en una pestaña nueva.');
+    var shot = d.el.querySelector('.shot');
+    if(d.nuevo){ var n = document.createElement('span'); n.className = 'new-tag'; n.setAttribute('aria-hidden', 'true'); n.textContent = '✨ Nuevo'; shot.appendChild(n); }
+    var st = document.createElement('span'); st.className = 'stamp'; st.setAttribute('aria-hidden', 'true'); st.textContent = '✓ Jugada'; shot.appendChild(st);
+    var q = document.createElement('button'); q.type = 'button'; q.className = 'qr-btn'; q.title = 'Proyectar con código QR';
+    q.setAttribute('aria-label', 'Proyectar ' + d.t + ' con código QR');
+    q.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 17h4v4h-4"/></svg>';
+    q.addEventListener('click', function(){ openPro(d); });
+    d.el.appendChild(q);
+    d.a.addEventListener('click', function(){ markPlayed(d.id); });
+    d.a.addEventListener('auxclick', function(e){ if(e.button === 1) markPlayed(d.id); });
+  });
+
+  /* ---------- Pasaporte ---------- */
+  var KEY = 'jp-pasaporte', played = {};
+  try{ (JSON.parse(localStorage.getItem(KEY)) || []).forEach(function(id){ played[id] = 1; }); }catch(e){}
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(Object.keys(played))); }catch(e){} }
+  function allOf(fn){ var l = M.filter(fn); return { n:l.filter(function(d){ return played[d.id]; }).length, t:l.length }; }
+  var BADGES = [
+    { k:'b1', e:'🚀', n:'Despegue', d:'Tu primera misión', c:function(){ return { n:Math.min(count(), 1), t:1 }; } },
+    { k:'b5', e:'🔥', n:'En racha', d:'5 misiones', c:function(){ return { n:Math.min(count(), 5), t:5 }; } },
+    { k:'b15', e:'💎', n:'Coleccionista', d:'15 misiones', c:function(){ return { n:Math.min(count(), 15), t:15 }; } },
+    { k:'idat', e:'🎨', n:'Explorador IDAT', d:'Todo IDAT', c:function(){ return allOf(function(d){ return d.i === 'idat'; }); } },
+    { k:'ie', e:'💡', n:'Emprendedor total', d:'Todo Inst. Emprendedores', c:function(){ return allOf(function(d){ return d.i === 'ie'; }); } },
+    { k:'sise', e:'📚', n:'Lector SISE', d:'Todo SISE', c:function(){ return allOf(function(d){ return d.i === 'sise'; }); } },
+    { k:'etica', e:'⚖️', n:'Guardián de la ética', d:'Todo Ética Publicitaria', c:function(){ return allOf(function(d){ return d.tema === 'etica'; }); } },
+    { k:'all', e:'👑', n:'Leyenda', d:'Todas las misiones', c:function(){ return { n:count(), t:M.length }; } }
+  ];
+  function count(){ return M.filter(function(d){ return played[d.id]; }).length; }
+  var bList = $('#badges'), bState = {};
+  BADGES.forEach(function(b){
+    var li = document.createElement('li'); li.className = 'badge';
+    li.innerHTML = '<i aria-hidden="true">' + b.e + '</i><span><b>' + b.n + '</b><small></small></span>';
+    bList.appendChild(li); b.li = li;
+  });
+  function renderPass(celebrate){
+    var n = count(), t = M.length;
+    $('#pass-n').textContent = n; $('#pass-t').textContent = t;
+    var bar = $('#pass-bar'); bar.setAttribute('aria-valuemax', t); bar.setAttribute('aria-valuenow', n); bar.setAttribute('aria-valuetext', n + ' de ' + t + ' misiones jugadas');
+    $('#pass-fill').style.width = (t ? n / t * 100 : 0) + '%';
+    M.forEach(function(d){ d.el.classList.toggle('played', !!played[d.id]); });
+    var won = [];
+    BADGES.forEach(function(b){
+      var r = b.c(), on = r.t > 0 && r.n >= r.t;
+      b.li.classList.toggle('on', on);
+      b.li.querySelector('small').textContent = on ? '¡Desbloqueada!' : b.d + ' · ' + r.n + '/' + r.t;
+      b.li.setAttribute('aria-label', b.n + ': ' + (on ? 'desbloqueada' : 'bloqueada, ' + b.d + ', ' + r.n + ' de ' + r.t));
+      if(celebrate && on && !bState[b.k]) won.push(b);
+      bState[b.k] = on;
+    });
+    if(won.length){
+      var b = won[won.length - 1];
+      b.li.classList.remove('pop'); void b.li.offsetWidth; b.li.classList.add('pop');
+      toast(b.e + ' ¡Insignia desbloqueada: ' + b.n + '!'); confetti();
+    }
+  }
+  function markPlayed(id){
+    if(!id || played[id]) return;
+    played[id] = 1; save(); renderPass(true); apply();
+  }
+  $('#pass-reset').addEventListener('click', function(){
+    if(!confirm('¿Borrar todos tus sellos e insignias de este dispositivo?')) return;
+    played = {}; save(); renderPass(false); apply(); toast('Pasaporte reiniciado. ¡A jugar de nuevo!');
+  });
+
+  /* ---------- Avisos y confeti ---------- */
+  var tEl = $('#toast'), tT = 0;
+  function toast(msg){ tEl.textContent = msg; tEl.classList.add('show'); clearTimeout(tT); tT = setTimeout(function(){ tEl.classList.remove('show'); }, 3200); }
+  var cv = $('#confetti'), cx = cv.getContext && cv.getContext('2d'), parts = [], cRun = false;
+  function confetti(){
+    if(RM || !cx) return;
+    var cs = getComputedStyle(document.documentElement), cols = ['--s1','--s2','--s3','--s4','--s5','--s6','--s7'].map(function(v){ return cs.getPropertyValue(v).trim() || '#fff'; });
+    cv.width = innerWidth; cv.height = innerHeight;
+    for(var k = 0; k < 140; k++) parts.push({ x:innerWidth / 2 + (Math.random() - .5) * 120, y:innerHeight * .55, vx:(Math.random() - .5) * 14, vy:-Math.random() * 15 - 6, r:Math.random() * 6 + 4, a:Math.random() * 6, va:(Math.random() - .5) * .3, c:cols[k % cols.length], life:1 });
+    if(!cRun){ cRun = true; requestAnimationFrame(tick); }
+  }
+  function tick(){
+    cx.clearRect(0, 0, cv.width, cv.height);
+    parts = parts.filter(function(p){ return p.life > 0 && p.y < cv.height + 30; });
+    parts.forEach(function(p){
+      p.vy += .42; p.vx *= .99; p.x += p.vx; p.y += p.vy; p.a += p.va; p.life -= .006;
+      cx.save(); cx.globalAlpha = Math.max(p.life, 0); cx.translate(p.x, p.y); cx.rotate(p.a); cx.fillStyle = p.c; cx.fillRect(-p.r / 2, -p.r / 4, p.r, p.r / 2); cx.restore();
+    });
+    if(parts.length) requestAnimationFrame(tick); else { cRun = false; cx.clearRect(0, 0, cv.width, cv.height); }
+  }
+
+  /* ---------- Sonido (clics de la ruleta) ---------- */
+  var ac = null, sound = true;
+  try{ sound = localStorage.getItem('jp-sonido') !== '0'; }catch(e){}
+  function beep(f, d, v){
+    if(!sound) return;
+    try{
+      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+      var o = ac.createOscillator(), g = ac.createGain();
+      o.type = 'triangle'; o.frequency.value = f; g.gain.value = v || .05;
+      g.gain.exponentialRampToValueAtTime(.0001, ac.currentTime + (d || .06));
+      o.connect(g); g.connect(ac.destination); o.start(); o.stop(ac.currentTime + (d || .06));
+    }catch(e){}
+  }
+  var sb = $('#snd');
+  function syncSnd(){ sb.textContent = sound ? '🔊' : '🔇'; sb.setAttribute('aria-pressed', sound ? 'true' : 'false'); sb.setAttribute('aria-label', sound ? 'Sonido activado' : 'Sonido apagado'); }
+  sb.addEventListener('click', function(){ sound = !sound; try{ localStorage.setItem('jp-sonido', sound ? '1' : '0'); }catch(e){} syncSnd(); });
+  syncSnd();
+
+  /* ---------- Diálogos ---------- */
+  function openDlg(dl){ if(dl.showModal){ if(!dl.open) dl.showModal(); } else dl.setAttribute('open', ''); }
+  function closeDlg(dl){ if(dl.close) dl.close(); else dl.removeAttribute('open'); }
+  [].slice.call(document.querySelectorAll('dialog')).forEach(function(dl){
+    dl.addEventListener('click', function(e){ if(e.target === dl || e.target.closest('[data-close]')) closeDlg(dl); });
+  });
+
+  /* ---------- Ruleta ---------- */
+  var dRul = $('#dlg-rul'), reel = $('#reel'), res = $('#rul-res'), go = $('#rul-go'), win = null, spinning = false;
+  function visible(){ return M.filter(function(d){ return !d.el.hidden; }); }
+  function spin(){
+    if(spinning) return;
+    var pool = visible(); if(!pool.length) pool = M.slice();
+    var fresh = pool.filter(function(d){ return !played[d.id]; });
+    var pick = (fresh.length ? fresh : pool);
+    win = pick[Math.floor(Math.random() * pick.length)];
+    var seq = [], N = 34, W = 0;
+    for(var k = 0; k < N; k++) seq.push(k === N - 4 ? win : M[Math.floor(Math.random() * M.length)]);
+    reel.innerHTML = seq.map(function(d){ return '<div class="reel-it"><img src="' + d.img + '" width="800" height="500" alt=""><b>' + d.t + '</b></div>'; }).join('');
+    var items = reel.children, first = items[0], step = first.offsetWidth + 12;
+    var target = items[N - 4], box = reel.parentNode.clientWidth;
+    var end = -(target.offsetLeft + target.offsetWidth / 2 - box / 2) + (Math.random() - .5) * (first.offsetWidth * .5);
+    res.textContent = 'Girando…'; go.setAttribute('aria-disabled', 'true'); go.style.pointerEvents = 'none'; go.style.opacity = .5;
+    var done = function(){
+      spinning = false;
+      reel.style.transform = 'translateX(' + end + 'px)';
+      target.classList.add('win');
+      res.innerHTML = 'Te tocó: <b>' + win.t + '</b> · ' + win.inst + ' · ' + win.curso;
+      go.href = win.href; go.removeAttribute('aria-disabled'); go.style.pointerEvents = ''; go.style.opacity = '';
+      beep(880, .25, .08); setTimeout(function(){ beep(1320, .3, .07); }, 120); confetti();
+    };
+    if(RM || !reel.animate){ done(); return; }
+    spinning = true;
+    var anim = reel.animate([{ transform:'translateX(0)' }, { transform:'translateX(' + end + 'px)' }], { duration:3800, easing:'cubic-bezier(.1,.75,.12,1)', fill:'forwards' });
+    var last = 0;
+    (function watch(){
+      if(!spinning) return;
+      var m = new DOMMatrixReadOnly(getComputedStyle(reel).transform), idx = Math.floor(-m.m41 / step);
+      if(idx !== last){ last = idx; beep(520 + (idx % 3) * 60, .04, .04); }
+      requestAnimationFrame(watch);
+    })();
+    anim.onfinish = done;
+  }
+  $('#rand').addEventListener('click', function(){ openDlg(dRul); spin(); });
+  $('#rul-again').addEventListener('click', spin);
+  go.addEventListener('click', function(e){ if(!win || spinning){ e.preventDefault(); return; } markPlayed(win.id); });
+  $('#rul-pro').addEventListener('click', function(){ if(win && !spinning){ closeDlg(dRul); openPro(win); } });
+
+  /* ---------- Modo proyector con QR ---------- */
+  var dPro = $('#dlg-pro'), proCur = null, qrReady = null;
+  function loadQR(){
+    if(window.qrcode) return Promise.resolve();
+    return qrReady || (qrReady = new Promise(function(ok, ko){ var sc = document.createElement('script'); sc.src = 'js/qrcode.min.js'; sc.onload = ok; sc.onerror = ko; document.head.appendChild(sc); }));
+  }
+  function openPro(d){
+    proCur = d;
+    $('#pro-img').src = d.img; $('#pro-h').textContent = d.t; $('#pro-c').textContent = d.inst + ' · ' + d.curso + ' · ' + d.fmt;
+    $('#pro-go').href = d.href; $('#pro-qr').setAttribute('aria-label', 'Código QR para abrir ' + d.t);
+    $('#pro-qr').innerHTML = '';
+    openDlg(dPro);
+    loadQR().then(function(){
+      var q = qrcode(0, 'M'); q.addData(d.href); q.make();
+      $('#pro-qr').innerHTML = q.createSvgTag({ cellSize:8, margin:0, scalable:true });
+    }).catch(function(){ $('#pro-qr').textContent = d.href; });
+  }
+  $('#pro-go').addEventListener('click', function(){ if(proCur) markPlayed(proCur.id); });
+  $('#pro-fs').addEventListener('click', function(){
+    if(document.fullscreenElement) document.exitFullscreen();
+    else if(dPro.requestFullscreen) dPro.requestFullscreen().catch(function(){});
+  });
+  dPro.addEventListener('close', function(){ if(document.fullscreenElement) document.exitFullscreen(); });
+
+  /* ---------- Test: ¿Qué misión es para ti? ---------- */
+  var dQ = $('#dlg-quiz'), qBody = $('#quiz-body'), steps = [].slice.call(document.querySelectorAll('.quiz-steps i')), ans = {};
+  var QS = [
+    { k:'i', t:'¿Dónde estudias?', o:[['idat','🎨','IDAT'],['ie','💡','Instituto de Emprendedores'],['usil','🦁','USIL'],['sise','📚','SISE'],['ca','⚡','Corriente Alterna'],['','👀','Solo estoy curioseando']] },
+    { k:'tema', t:'¿Qué te gusta más?', o:[['diseno','✏️','Diseño y composición'],['ux','📱','Webs y apps (UX)'],['marketing','📈','Marketing y redes'],['etica','⚖️','Publicidad y ética'],['lectura','📖','Lectura y redacción'],['ia','🤖','Inteligencia artificial']] },
+    { k:'forma', t:'¿Cómo prefieres jugar?', o:[['escape','🔐','Escape room y acertijos'],['quiz','⚡','Preguntas rápidas'],['sim','🎭','Simulador o juego de rol'],['niveles','🧗','Misión por niveles']] }
+  ];
+  function esc(t){ return t.replace(/[&<>"]/g, function(c){ return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]; }); }
+  function ask(n){
+    steps.forEach(function(s, k){ s.classList.toggle('on', k <= n); });
+    var q = QS[n];
+    qBody.innerHTML = '<p class="q-t">' + (n + 1) + '. ' + q.t + '</p><div class="q-ops">' + q.o.map(function(o){ return '<button type="button" class="q-op" data-v="' + o[0] + '"><span aria-hidden="true">' + o[1] + '</span>' + o[2] + '</button>'; }).join('') + '</div>';
+    [].slice.call(qBody.querySelectorAll('.q-op')).forEach(function(b){
+      b.addEventListener('click', function(){ ans[q.k] = b.getAttribute('data-v'); beep(660, .05, .04); if(n < QS.length - 1) ask(n + 1); else result(); });
+    });
+    var f = qBody.querySelector('.q-op'); if(f) f.focus();
+  }
+  function result(){
+    steps.forEach(function(s){ s.classList.add('on'); });
+    var sc = M.map(function(d){
+      var p = 0;
+      if(ans.i && d.i === ans.i) p += 3;
+      if(d.tema === ans.tema || d.tema2 === ans.tema) p += 2;
+      if(d.forma === ans.forma) p += 1;
+      if(!played[d.id]) p += .5;
+      return { d:d, p:p + Math.random() * .2 };
+    }).sort(function(a, b){ return b.p - a.p; });
+    var b = sc[0].d, more = sc.slice(1, 3).map(function(x){ return x.d; });
+    qBody.innerHTML = '<p class="q-t">✨ Tu misión ideal es…</p>' +
+      '<div class="q-best"><img src="' + b.img + '" width="800" height="500" alt=""><div><span class="curso" style="' + esc(b.el.getAttribute('style') || '') + '">' + esc(b.curso) + '</span><h3>' + esc(b.t) + '</h3><p>' + esc(b.inst + ' · ' + b.fmt) + '</p><p style="margin-top:.4rem">' + esc(b.p) + '</p></div></div>' +
+      '<div class="dlg-act"><a class="btn-spec go" id="q-go" href="' + b.href + '" target="_blank" rel="noopener"><span aria-hidden="true">▶</span> ¡Jugar ahora!</a><button type="button" class="btn-matte alt" id="q-again"><span aria-hidden="true">↺</span> Volver a empezar</button></div>' +
+      '<p class="q-t" style="font-size:.95rem;margin-top:1.2rem">También te pueden gustar</p><div class="q-more">' + more.map(function(m){ return '<a href="' + m.href + '" target="_blank" rel="noopener" data-id="' + m.id + '"><span>' + esc(m.t) + '</span><small>' + esc(m.inst) + '</small></a>'; }).join('') + '</div>';
+    $('#q-go').addEventListener('click', function(){ markPlayed(b.id); });
+    [].slice.call(qBody.querySelectorAll('.q-more a')).forEach(function(a){ a.addEventListener('click', function(){ markPlayed(a.getAttribute('data-id')); }); });
+    $('#q-again').addEventListener('click', function(){ ans = {}; ask(0); });
+    confetti(); $('#q-go').focus();
+  }
+  $('#quiz-open').addEventListener('click', function(){ ans = {}; openDlg(dQ); ask(0); });
+
+  /* ---------- Filtros, buscador y curso ---------- */
+  var fInst = 'todas', fCurso = '', fQ = '', onlyNew = false, onlyTodo = false;
+  var sel = $('#curso'), cnt = {};
+  M.forEach(function(d){ cnt[d.curso] = (cnt[d.curso] || 0) + 1; });
+  Object.keys(cnt).sort(function(a, b){ return a.localeCompare(b, 'es'); }).forEach(function(c){
+    var o = document.createElement('option'); o.value = c; o.textContent = c + ' (' + cnt[c] + ')'; sel.appendChild(o);
+  });
+  function apply(){
+    var q = norm(fQ).trim(), n = 0;
+    M.forEach(function(d){
+      var ok = (fInst === 'todas' || d.i === fInst) && (!fCurso || d.curso === fCurso) && (!q || d.txt.indexOf(q) > -1) && (!onlyNew || d.nuevo) && (!onlyTodo || !played[d.id]);
+      d.el.hidden = !ok; if(ok) n++;
+    });
+    $('#count').textContent = n === M.length ? 'Mostrando las ' + n + ' misiones' : 'Mostrando ' + n + ' de ' + M.length + ' misiones';
+    $('#empty').hidden = n > 0;
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      fInst = b.getAttribute('data-f');
+      btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      apply();
+    });
+  });
+  sel.addEventListener('change', function(){ fCurso = sel.value; apply(); });
+  $('#q').addEventListener('input', function(e){ fQ = e.target.value; apply(); });
+  [['#only-new', function(v){ onlyNew = v; }], ['#only-todo', function(v){ onlyTodo = v; }]].forEach(function(x){
+    var b = $(x[0]); b.addEventListener('click', function(){ var v = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', v ? 'true' : 'false'); x[1](v); apply(); });
+  });
+  if(!M.some(function(d){ return d.nuevo; })) $('#only-new').hidden = true;
+  // Enlaces desde la web principal: misiones.html?i=idat&curso=…
+  try{
+    var u = new URLSearchParams(location.search), ui = u.get('i'), uc = u.get('curso');
+    if(ui){ btns.forEach(function(b){ if(b.getAttribute('data-f') === ui){ fInst = ui; btns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); } }); }
+    if(uc && cnt[uc]){ fCurso = uc; sel.value = uc; }
+    if(ui || uc) setTimeout(function(){ document.getElementById('misiones').scrollIntoView({ behavior:RM ? 'auto' : 'smooth', block:'start' }); }, 300);
+  }catch(e){}
+
+  /* ---------- Mazo del inicio: cambia la misión destacada cada 3,5 s ---------- */
+  var deck = $('#deck'), dImg = $('#deck-img'), dT = $('#deck-t'), dC = $('#deck-c'), di = 0;
+  function show(i){ var d = M[i]; dImg.style.opacity = 0; setTimeout(function(){ dImg.src = d.img; dT.textContent = d.t; dC.textContent = d.inst + ' · ' + d.curso; deck.href = d.href; deck.setAttribute('aria-label', 'Jugar ' + d.t + ', ' + d.inst + ' · ' + d.curso + '. Se abre en una pestaña nueva.'); dImg.style.opacity = 1; }, RM ? 0 : 300); }
+  var timer = null, paused = RM, hold = false;
+  function run(){ clearInterval(timer); timer = null; if(!paused && !hold) timer = setInterval(function(){ di = (di + 1) % M.length; show(di); }, 3500); }
+  var pb = $('#deck-pause');
+  function syncPause(){ pb.setAttribute('aria-pressed', paused ? 'true' : 'false'); $('#deck-pl').textContent = paused ? 'Reanudar' : 'Pausar'; $('#deck-pi').textContent = paused ? '▶' : '❚❚'; }
+  pb.addEventListener('click', function(){ paused = !paused; syncPause(); run(); });
+  ['mouseenter','focusin'].forEach(function(ev){ deck.addEventListener(ev, function(){ hold = true; run(); }); });
+  ['mouseleave','focusout'].forEach(function(ev){ deck.addEventListener(ev, function(){ hold = false; run(); }); });
+  deck.addEventListener('click', function(){ markPlayed(deck.href.split('/').pop()); });
+  deck.setAttribute('aria-label', 'Jugar El Museo Desordenado, IDAT · Diagramación y Composición. Se abre en una pestaña nueva.');
+  syncPause(); run();
+
+  renderPass(false); apply();
+})();
+</script>
+</body>
+</html>
