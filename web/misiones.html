@@ -153,7 +153,7 @@
         <button type="button" class="btn-spec rand" id="rand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.3" fill="currentColor"/></svg>Jugar una misión al azar<span class="sr"> (se abre en una pestaña nueva)</span></button>
         <a href="#misiones" class="btn-matte see">Ver todas las misiones <span aria-hidden="true">↓</span></a>
       </div>
-      <div class="stats"><span><b>20</b> misiones</span><span><b>3</b> instituciones</span><span><b>8</b> cursos</span></div>
+      <div class="stats"><span><b>35</b> misiones</span><span><b>5</b> instituciones</span><span><b>12</b> cursos</span></div>
     </div>
     <div class="deck-wrap">
     <a class="deck" id="deck" href="https://claude.ai/artifact/3DoFCtZUzg1jbemDwfQisS" target="_blank" rel="noopener" aria-label="Jugar la misión destacada">
@@ -169,16 +169,18 @@
   </section>
 
   <div class="filters" role="group" aria-label="Filtrar misiones por institución">
-    <button type="button" aria-pressed="true" data-f="todas">Todas <small>20</small></button>
+    <button type="button" aria-pressed="true" data-f="todas">Todas <small>35</small></button>
     <button type="button" aria-pressed="false" data-f="idat">IDAT <small>12</small></button>
-    <button type="button" aria-pressed="false" data-f="ie">Instituto de Emprendedores <small>7</small></button>
+    <button type="button" aria-pressed="false" data-f="ie">Instituto de Emprendedores <small>17</small></button>
     <button type="button" aria-pressed="false" data-f="usil">USIL <small>1</small></button>
+    <button type="button" aria-pressed="false" data-f="sise">SISE <small>4</small></button>
+    <button type="button" aria-pressed="false" data-f="ca">Corriente Alterna <small>1</small></button>
   </div>
 
   <!--
     CÓMO AGREGAR UNA MISIÓN
     Copia un bloque <li class="mi"> completo y cambia:
-      data-i   → la institución para el filtro: idat, ie o usil (si agregas otra, agrega también su botón arriba)
+      data-i   → la institución para el filtro: idat, ie, usil, sise o ca (si agregas otra, agrega también su botón arriba)
       style    → los dos colores de la etiqueta del curso (--c1 y --c2)
       href     → el enlace del artefacto
       img src  → la captura del juego, en img/misiones/ (800 × 500 px, .webp)
@@ -307,11 +309,103 @@
         <div class="body"><span class="curso">Ética Publicitaria</span><h2>El Semáforo del CONAR</h2><p>Decidir en 20 segundos si cada anuncio sale al aire o va al CONAR.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/17bJ2fB3NJVDn2CYBXxrgM" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/semaforo-etico.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Semáforo Ético de Campañas"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Semáforo · 8 decisiones</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Semáforo Ético de Campañas</h2><p>Dirigir un comité creativo y dar verde, ámbar o rojo a 8 decisiones de campaña.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/H9AKxqJoz8wteASDScZKuV" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/detector-encubierta.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Detector de Publicidad Encubierta"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Simulador · 8 casos</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Detector de Publicidad Encubierta</h2><p>Auditar publicaciones de redes, apps y correos y detectar qué norma se incumple.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/3qMbfLzVEACDdZU7dUCqVo" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/copy-advice.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Copy Advice CONAR"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Juego de rol · 8 borradores</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Copy Advice CONAR</h2><p>Dictaminar si cada borrador sale al aire o qué principio del Código se debe corregir.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s5);--c2:var(--s4)">
+      <a href="https://claude.ai/artifact/BMDYfUHZJmDDSt8pvRAKeJ" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/inspector-ccd.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Inspector CCD"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Juego de rol · 8 expedientes</span></div>
+        <div class="body"><span class="curso">Ética Publicitaria</span><h2>Inspector CCD</h2><p>Publicidad dirigida a menores: qué norma infringe cada anuncio, o si no hay infracción.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s2);--c2:var(--s1)">
+      <a href="https://claude.ai/artifact/1wjpzVuieeNwHQrLKGTVLA" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/arranque-crm.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Arranque CRM"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz · 10 preguntas</span></div>
+        <div class="body"><span class="curso">Customer Relationship Management</span><h2>Arranque CRM</h2><p>Calentamiento sobre los tipos de CRM con podio en vivo.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s2);--c2:var(--s1)">
+      <a href="https://claude.ai/artifact/4BykDQSRimzLWzPmq4TXFv" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/mision-crm.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión CRM"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Juego por equipos · 5 niveles</span></div>
+        <div class="body"><span class="curso">Customer Relationship Management</span><h2>Misión CRM</h2><p>Ordenar el CRM de una pastelería: historia, tipos de CRM, HubSpot y pipeline.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s7);--c2:var(--s6)">
+      <a href="https://claude.ai/artifact/SwPLHsM3mthSZBg5ecmxhS" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/cm-por-un-dia.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de CM por un Día"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Simulador · 8 decisiones</span></div>
+        <div class="body"><span class="curso">Campaña Integral</span><h2>CM por un Día</h2><p>Ser Community Manager de «Café Barrio» durante cuatro momentos del día.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s7);--c2:var(--s6)">
+      <a href="https://claude.ai/artifact/9rvtoxUPasNXQUR716keVm" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/dulce-o-truco.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Dulce o Truco Publicitario"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz de Halloween</span></div>
+        <div class="body"><span class="curso">Campaña Integral</span><h2>Dulce o Truco Publicitario</h2><p>Medios ATL y BTL, estrategias y métricas como CTR, CPC, CPM y ROI.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s7);--c2:var(--s6)">
+      <a href="https://claude.ai/artifact/DQrK1P6pEHBQ6AQPRQXt4j" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/match-creativo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Match Creativo"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz · 10 preguntas</span></div>
+        <div class="body"><span class="curso">Campaña Integral</span><h2>Match Creativo</h2><p>Publicidad 360°, tradicional, digital y de contenidos.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="ie" style="--c1:var(--s7);--c2:var(--s6)">
+      <a href="https://claude.ai/artifact/W2dy7Jg4Whc468x5ETQ9s3" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/planner-medios.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Planner de Medios"><span class="inst">Instituto de Emprendedores · USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Misión · 4 niveles</span></div>
+        <div class="body"><span class="curso">Campaña Integral</span><h2>Misión Planner de Medios</h2><p>ATL y BTL, estrategias y el plan de medios de Helados Chaska.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
     <!-- ===== USIL ===== -->
     <li class="mi" data-i="usil" style="--c1:var(--s2);--c2:var(--s3)">
       <a href="https://claude.ai/artifact/TEsUZmXSU5r4M9TZWbkoPL" target="_blank" rel="noopener">
         <div class="shot"><img src="img/misiones/helados-chaska.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Helados Chaska"><span class="inst"><img src="img/logos/usil.png" width="181" height="72" alt="">USIL</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Misión de agencia · 6 pasos</span></div>
         <div class="body"><span class="curso">Diseño gráfico y medios digitales</span><h2>Misión Helados Chaska</h2><p>Brief creativo, plan de medios con S/ 3,000 y cronograma de campaña.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <!-- ===== SISE ===== -->
+    <li class="mi" data-i="sise" style="--c1:var(--s2);--c2:var(--s7)">
+      <a href="https://claude.ai/artifact/UeYqpLgbuCF1UuTAEaSopD" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/repaso-relampago.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Repaso Relámpago"><span class="inst">SISE</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz · 10 preguntas</span></div>
+        <div class="body"><span class="curso">Taller de Técnicas para la Redacción</span><h2>Repaso Relámpago</h2><p>Lectura, signos, funciones del lenguaje y partes de la noticia.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="sise" style="--c1:var(--s2);--c2:var(--s7)">
+      <a href="https://claude.ai/artifact/XdsW6ir71hGJrkAwGoUZrm" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/duelo-lectores.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Duelo de Lectores"><span class="inst">SISE</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Duelo · 3 rondas</span></div>
+        <div class="body"><span class="curso">Taller de Técnicas para la Redacción</span><h2>Duelo de Lectores</h2><p>Funciones del lenguaje, momentos y niveles de lectura contra el reloj.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="sise" style="--c1:var(--s2);--c2:var(--s7)">
+      <a href="https://claude.ai/artifact/CVeeeJeoEdUh2QJLQa5ppB" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/detectives-signo.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Detectives del Signo"><span class="inst">SISE</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Detective · 3 rondas</span></div>
+        <div class="body"><span class="curso">Taller de Técnicas para la Redacción</span><h2>Detectives del Signo</h2><p>Clases de signo, ideas clave de un texto y lectura rápida.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <li class="mi" data-i="sise" style="--c1:var(--s6);--c2:var(--s5)">
+      <a href="https://claude.ai/artifact/Ue8PmXPsexYqxDc4Rqwxma" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/pasa-imprenta.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de ¿Pasa a imprenta?"><span class="inst">SISE</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Duelo por equipos · estaciones</span></div>
+        <div class="body"><span class="curso">Pre Prensa Digital</span><h2>¿Pasa a imprenta?</h2><p>Decidir si cada archivo está listo para imprenta: CMYK, modo líneas y composición.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
+      </a>
+    </li>
+    <!-- ===== Corriente Alterna ===== -->
+    <li class="mi" data-i="ca" style="--c1:var(--s4);--c2:var(--s2)">
+      <a href="https://claude.ai/artifact/5eW9ittnS61R9JCK5BRXtr" target="_blank" rel="noopener">
+        <div class="shot"><img src="img/misiones/relampago-ia.webp" width="800" height="500" loading="lazy" alt="Pantalla de inicio de Misión Relámpago IA"><span class="inst">Corriente Alterna</span><span class="hover-play" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="fmt">Quiz · 6 preguntas</span></div>
+        <div class="body"><span class="curso">AI Creative Day · IA aplicada al diseño</span><h2>Misión Relámpago IA</h2><p>Cuánto dominas la IA aplicada al diseño gráfico, en grupo y contra el reloj.</p><span class="play btn-spec"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>Jugar misión <i aria-hidden="true">↗</i></span></div>
       </a>
     </li>
   </ul>
