@@ -244,6 +244,15 @@
   .cx-t small{overflow:hidden;font-size:.82rem;color:#a1a1aa;text-overflow:ellipsis;white-space:nowrap}
   .cx-go{margin-left:auto;flex-shrink:0;color:#71717a;transition:transform .35s,color .35s}
   .cx-a:hover .cx-go,.cx-a:focus-visible .cx-go{color:#fff;transform:translate(3px,-3px)}
+  /* Docencia: cursos con misiones */
+  .chip-mis{display:inline-flex;align-items:center;gap:.55rem;color:#fff;transition:border-color .25s,background-color .25s,transform .25s}
+  .chip-mis b{padding:.1rem .45rem;border-radius:999px;font-size:.72rem;font-weight:800;color:#0B0B0D;background:linear-gradient(90deg,var(--s1),var(--s4))}
+  .chip-mis:hover,.chip-mis:focus-visible{transform:translateY(-2px);border-color:rgba(255,255,255,.35)}
+  .tp-m{display:inline-flex;align-items:center;gap:.45rem;justify-self:start;margin-top:.4rem;font-size:.9rem;font-weight:700;color:#fff;text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--s4) 70%,transparent);text-underline-offset:5px}
+  .tp-m[hidden]{display:none}
+  .tp-m i{font-style:normal;transition:transform .25s}
+  .tp-m:hover i{transform:translateX(4px)}
+  footer nav a{display:inline-block;padding-block:.3rem}
   /* Pie: marca en una sola línea para que el nombre quede alineado con el logo */
   footer .ft-brand{align-items:flex-start}
   @media (min-width:768px){footer .ft-brand{flex-shrink:0;align-items:center}.ft-brand p+p{white-space:nowrap}}
@@ -899,6 +908,7 @@
           <div class="grid content-start gap-3">
             <p class="text-[11px] font-semibold uppercase tracking-[.12em] text-zinc-500">Cursos</p>
             <ul class="flex flex-wrap gap-2" id="tp-c"></ul>
+            <a href="misiones.html" class="tp-m" id="tp-m" hidden><span aria-hidden="true">🎮</span> <span id="tp-mt">Juega sus misiones</span> <i aria-hidden="true">→</i></a>
           </div>
         </div>
       </div>
@@ -1620,19 +1630,36 @@
   /* ---------- Docencia: pestañas ---------- */
   var TAB = {
     usil:{ h:'Universidad San Ignacio de Loyola', d:'2025', a:'Diseño gráfico y medios digitales', c:['Diseño gráfico y medios digitales'] },
-    ie:{ h:'Instituto de Emprendedores (USIL)', d:'Modalidad virtual', a:'Marketing y gestión', c:['Marketing Digital','Trade Marketing','Ética Publicitaria','Marketing Directo','Comunicación en Medios Digitales','Gestión de Ventas'] },
+    ie:{ h:'Instituto de Emprendedores (USIL)', d:'Modalidad virtual', a:'Marketing y gestión', c:['Marketing Digital','Trade Marketing','Ética Publicitaria','Marketing Directo','Social Media Manager','Customer Relationship Management','Campaña Integral','Comunicación en Medios Digitales','Gestión de Ventas'] },
     idat:{ h:'IDAT · Escuela de Comunicaciones', d:'2023', a:'Diseño gráfico y web', c:['Diagramación y Composición','Diseño web: interfaces y prototipado','Proyecto de Aplicación Empresarial'] },
     senati:{ h:'SENATI', d:'2023', a:'Diseño gráfico y animación', c:['Diseño gráfico y animación'] },
-    sise:{ h:'Instituto SISE · CPEX', d:'2022 · modalidad virtual', a:'Publicidad', c:['Publicidad ATL & BTL'] },
+    sise:{ h:'Instituto SISE · CPEX', d:'2022 · modalidad virtual', a:'Publicidad', c:['Publicidad ATL & BTL','Taller de Técnicas para la Redacción','Pre Prensa Digital'] },
     chicas:{ h:'+Chicas Tec · UNICEF Perú', d:'Voluntariado', a:'Docencia', c:['Docente voluntario'] }
   };
+  // Misiones de clase por curso (misiones.html). Si agregas una misión, actualiza el número aquí.
+  var MIS = { 'Diagramación y Composición':8, 'Diseño web: interfaces y prototipado':4, 'Marketing Digital':1, 'Trade Marketing':1, 'Marketing Directo':1, 'Ética Publicitaria':6, 'Social Media Manager':2, 'Customer Relationship Management':2, 'Campaña Integral':4, 'Diseño gráfico y medios digitales':1, 'Taller de Técnicas para la Redacción':3, 'Pre Prensa Digital':1 };
   var tabs = $$('[data-k]'), tp = $('#tp');
   function selTab(t, focus){
     tabs.forEach(function(x){ var on = x===t; x.setAttribute('aria-selected', on?'true':'false'); x.classList.toggle('text-zinc-300', !on); x.tabIndex = on?0:-1; });
     var d = TAB[t.getAttribute('data-k')];
     $('#tp-h').textContent = d.h; $('#tp-d').textContent = d.d; $('#tp-a').textContent = d.a;
     var ul = $('#tp-c'); ul.innerHTML = '';
-    d.c.forEach(function(c){ var li2 = document.createElement('li'); li2.className = 'chip px-3.5 py-2 text-sm'; li2.textContent = c; ul.appendChild(li2); });
+    var k = t.getAttribute('data-k'), total = 0;
+    d.c.forEach(function(c){
+      var li2 = document.createElement('li');
+      if(MIS[c]){
+        total += MIS[c];
+        var a = document.createElement('a'); a.className = 'chip chip-mis px-3.5 py-2 text-sm';
+        a.href = 'misiones.html?i=' + k + '&curso=' + encodeURIComponent(c);
+        a.setAttribute('aria-label', c + ': ver ' + MIS[c] + (MIS[c] === 1 ? ' misión' : ' misiones') + ' de clase');
+        a.innerHTML = '<span></span><b aria-hidden="true">🎮 ' + MIS[c] + '</b>'; a.firstChild.textContent = c;
+        li2.appendChild(a);
+      } else { li2.className = 'chip px-3.5 py-2 text-sm'; li2.textContent = c; }
+      ul.appendChild(li2);
+    });
+    var mi = $('#tp-m');
+    if(total){ var nom = t.textContent; nom = (/^Instituto/.test(nom) ? 'del ' : 'de ') + nom; mi.hidden = false; mi.href = 'misiones.html?i=' + k; $('#tp-mt').textContent = (total === 1 ? 'Juega la misión ' : 'Juega las ' + total + ' misiones ') + nom; }
+    else mi.hidden = true;
     tp.setAttribute('aria-labelledby', t.id);
     if(!RM && tp.animate) tp.animate([{opacity:.25, transform:'translateY(10px)'},{opacity:1, transform:'none'}], { duration:450, easing:'cubic-bezier(.2,.8,.2,1)' });
     if(focus) t.focus();
